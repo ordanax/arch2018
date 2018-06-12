@@ -1,7 +1,6 @@
 # arch2018
 This script install ArchLinux XFCE + AUR + XFCE config. Also you can add own /home directory as well as XFCE config.
 
-Russian
 Этот скрипт для персональной установки ArchLinux XFCE + AUR + XFCE config. Вы также можете добавить копию директории /home по тй е схеме как добавленна XFCE config.
 
 Сам скрипт состоит из 3 частей.
