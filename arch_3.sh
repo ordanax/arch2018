@@ -21,6 +21,7 @@ echo 'Качаем и устанавливаем настройки Xfce'
 # Выгрузите архив в интернет и скорректируйте ссылку на XFCE файл заменив ссылку http://ordanax.ru/arch_linux/xfce4.tar.gz на свою.
 cd ~/Downloads
 wget http://ordanax.ru/arch/xfce4.tar.gz
+rm -rg ~/.config/xfce4
 tar -xzf xfce4.tar.gz -C /
 rm -rf ~/Downloads/*
 
