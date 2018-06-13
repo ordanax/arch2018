@@ -1,4 +1,14 @@
 #!/bin/bash
+
+# Установочный скрипт ALFI (от Arch Linux Full Install - Полная установка Arch Linux)
+# Цель скрипта - быстрое развертывание системы с вашими персональными настройками (конфиг XFCE, темы, программы и т.д.).
+
+# В разработке принимали участие:
+# Алексей Бойко https://vk.com/ordanax
+# Степан Скрябин https://vk.com/zurg3
+# Михаил Сарвилин https://vk.com/michael170707
+# Данил Антошкин https://vk.com/danil.antoshkin
+
 loadkeys ru
 setfont cyr-sun16
 echo 'Скрипт сделан на основе чеклиста Бойко Алексея по Установке ArchLinux'
@@ -6,6 +16,45 @@ echo 'Ссылка на чек лист есть в группе vk.com/arch4u'
 
 echo '2.3 Синхронизация системных часов'
 timedatectl set-ntp true
+
+echo '2.4 создание разделов'
+(
+  echo o;
+
+  echo n;
+  echo;
+  echo;
+  echo;
+  echo +100M;
+  echo y;
+
+  echo n;
+  echo;
+  echo;
+  echo;
+  echo +20G;
+  echo y;
+
+  echo n;
+  echo;
+  echo;
+  echo;
+  echo +1024M;
+  echo y;
+
+  echo n;
+  echo p;
+  echo;
+  echo;
+  echo y;
+  echo a;
+  echo 1;
+
+  echo w;
+) | fdisk /dev/sda
+
+echo 'Ваша разметка диска'
+fdisk -l
 
 echo '2.4.2 Форматирование дисков'
 mkfs.ext2  /dev/sda1 -L boot
