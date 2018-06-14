@@ -69,16 +69,22 @@ mount /dev/sda1 /mnt/boot
 swapon /dev/sda3
 mount /dev/sda4 /mnt/home
 
-echo '3.1 Выбор зеркал для загрузки. Используем программу Reflector'
-pacman -Sy --noconfirm reflector
-pacman -S --noconfirm --needed reflector
-reflector -l 3 --sort rate --save /etc/pacman.d/mirrorlist
+echo '3.1 Выбор зеркал для загрузки. Ставим зеркало от Яндекс'
+echo "Server = http://mirror.yandex.ru/archlinux/\$repo/os/\$arch" > /etc/pacman.d/mirrorlist
 
 echo '3.2 Установка основных пакетов'
 pacstrap /mnt base base-devel
 
 echo '3.3 Настройка системы'
 genfstab -pU /mnt >> /mnt/etc/fstab
+
+echo 'Качаем вторую часть скрипта'
+wget ordanax.ru/arch/arch_2.sh
+
+echo 'Перемещаем его'
+mv -f /root/arch_2.sh /arch_2.sh
+
+
 
 echo 'Переходим в установлнную систему.'
 echo '1) Установите wget, командой: pacman -S wget'
