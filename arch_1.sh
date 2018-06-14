@@ -74,14 +74,6 @@ pacstrap /mnt base base-devel
 echo '3.3 Настройка системы'
 genfstab -pU /mnt >> /mnt/etc/fstab
 
-echo 'Качаем вторую часть скрипта'
-wget ordanax.ru/arch/arch_2.sh
-
-echo 'Перемещаем его'
-mv -f /root/arch_2.sh /arch_2.sh
-
-
-
 echo 'Переходим в установлнную систему.'
 echo '1) Установите wget, командой: pacman -S wget'
 echo '2) Скачайте вторую часть скрипта командой: wget ordanax.ru/arch/arch_2.sh'
