@@ -1,6 +1,6 @@
 #!/bin/bash
 echo 'Прписываем имя компьютера'
-echo "p347" > /etc/hostname
+echo "p347host" > /etc/hostname
 ln -svf /usr/share/zoneinfo/Asia/Yekaterinburg /etc/localtime
 
 echo '3.4 Добавляем русскую локаль системы'
