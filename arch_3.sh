@@ -34,8 +34,6 @@ mkdir ~/Documents
 mkdir ~/Music/
 mkdir ~/Video/
 mkdir ~/Dropbox/
-mkdir ~/Dropbox/WALLPAPERS
-mkdir ~/Dropbox/WALLPAPERS/GREEN/
 
 echo 'Включаем сетевой экран'
 sudo ufw enable
