@@ -1,6 +1,6 @@
 #!/bin/bash
 echo 'Прписываем имя компьютера'
-echo "ordanax-pc" > /etc/hostname
+echo "p347" > /etc/hostname
 ln -svf /usr/share/zoneinfo/Asia/Yekaterinburg /etc/localtime
 
 echo '3.4 Добавляем русскую локаль системы'
@@ -35,10 +35,10 @@ echo 'Ставим программу для Wi-fi'
 pacman -S dialog wpa_supplicant --noconfirm 
 
 echo 'Добавляем пользователя'
-useradd -m -g users -G wheel -s /bin/bash ordanax
+useradd -m -g users -G wheel -s /bin/bash p347
 
 echo 'Устанавливаем пароль пользователя'
-passwd ordanax
+passwd p347
 echo 'Устанавливаем SUDO'
 echo '%wheel ALL=(ALL) ALL' >> /etc/sudoers
 
@@ -58,8 +58,8 @@ fi
 echo 'Ставим иксы и драйвера'
 pacman -S $gui_install
 
-echo 'Ставим Xfce, LXDM и сеть'
-pacman -S xfce4 xfce4-goodies lxdm networkmanager network-manager-applet ppp --noconfirm
+echo 'Ставим i3, LXDM и сеть'
+pacman -S  i3 xterm lxdm networkmanager network-manager-applet ppp --noconfirm
 
 echo 'Ставим шрифты'
 pacman -S ttf-liberation ttf-dejavu --noconfirm 
