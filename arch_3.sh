@@ -21,9 +21,10 @@ cd ..
 rm -rf aurman
 
 echo 'Установка программ'
+sudo pacman -S nodejs --noconfirm
 sudo pacman -S dmenu scrot feh firefox ufw pidgin ntfs-3g screenfetch alsa-lib alsa-utils p7zip unrar pulseaudio --noconfirm
-# obs-studio veracrypt freemind filezilla cherrytree gimp libreoffice libreoffice-fresh-ru kdenlive audacity screenfetch vlc qt4 qbittorrent f2fs-tools dosfstools ntfs-3g gnome-calculator file-roller gvfs aspell-ru --noconfirm 
-aurman -S pamac-aur dropbox joxi obs-linuxbrowser purple-vk-plugin purple-facebook pidgin-encryption sublime-text2 hunspell-ru pamac-aur --noconfirm 
+# obs-studio pamac-aur veracrypt freemind filezilla cherrytree gimp libreoffice libreoffice-fresh-ru kdenlive audacity screenfetch vlc qt4 qbittorrent f2fs-tools dosfstools ntfs-3g gnome-calculator file-roller gvfs aspell-ru --noconfirm 
+aurman -S dropbox joxi obs-linuxbrowser purple-vk-plugin purple-facebook pidgin-encryption sublime-text2 hunspell-ru --noconfirm 
 
 echo 'Установка тем'
 aurman -S compton lxappearance terminus-ttf xkblayout-state ttf-font-awesome --noconfirm
