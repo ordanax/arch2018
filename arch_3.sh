@@ -21,7 +21,7 @@ cd ..
 rm -rf aurman
 
 echo 'Установка программ'
-sudo pacman -S nodejs vim openvpn rtorrent mplayer --noconfirm
+sudo pacman -S nodejs vim openvpn rtorrent mplayer evince --noconfirm
 sudo pacman -S dmenu scrot feh firefox ufw pidgin ntfs-3g screenfetch alsa-lib alsa-utils p7zip unrar pulseaudio --noconfirm
 # obs-studio pamac-aur veracrypt freemind filezilla cherrytree gimp libreoffice libreoffice-fresh-ru kdenlive audacity screenfetch vlc qt4 qbittorrent f2fs-tools dosfstools ntfs-3g gnome-calculator file-roller gvfs aspell-ru --noconfirm 
 aurman -S dropbox joxi obs-linuxbrowser purple-vk-plugin purple-facebook pidgin-encryption sublime-text2 hunspell-ru --noconfirm 
