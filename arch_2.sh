@@ -49,7 +49,7 @@ echo 'Include = /etc/pacman.d/mirrorlist' >> /etc/pacman.conf
 pacman -Syy
 
 echo 'Ставим иксы и драйвера'
-pacman -S xorg-server xorg-drivers xorg-xinit
+pacman -S xorg-server xf86-video-intel xorg-xinit
 
 echo 'Ставим i3, LXDM и сеть'
 pacman -S  i3 xterm lxdm networkmanager network-manager-applet ppp --noconfirm
