@@ -15,7 +15,7 @@ git clone https://aur.archlinux.org/aurman.git
 cd aurman
 sudo pacman -S archlinux-keyring
 sudo pacman-key -r 465022E743D71E39
-gpg —recv-keys 465022E743D71E39
+gpg --recv-keys 465022E743D71E39
 makepkg -si --noconfirm
 cd ..
 rm -rf aurman
