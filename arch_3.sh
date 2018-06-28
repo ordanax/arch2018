@@ -34,7 +34,6 @@ mkdir ~/Downloads
 mkdir ~/Documents
 mkdir ~/Music/
 mkdir ~/Video/
-mkdir ~/Dropbox/
 
 echo 'Включаем сетевой экран'
 sudo ufw enable
