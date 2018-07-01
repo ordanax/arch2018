@@ -13,7 +13,7 @@ rm -rf expac-git
 #Ставим aurman
 git clone https://aur.archlinux.org/aurman.git
 cd aurman
-makepkg -si --noconfirm --skippgpcheck
+makepkg -si --noconfirm
 cd ..
 rm -rf aurman
 
