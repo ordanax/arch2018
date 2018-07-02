@@ -52,7 +52,7 @@ echo 'Ставим иксы и драйвера'
 pacman -S xorg-server xf86-video-intel xorg-xinit
 
 echo 'Ставим i3, LXDM и сеть'
-pacman -S  i3 xterm netctl lxdm --noconfirm
+pacman -S  i3 terminator netctl lxdm --noconfirm
 
 echo 'Ставим шрифты'
 pacman -S ttf-liberation ttf-dejavu --noconfirm 
