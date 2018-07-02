@@ -21,10 +21,12 @@ cd ..
 rm -rf aurman
 
 echo 'Установка программ'
-#sudo pacman -S arc-gtk-theme lxappearance nodejs vim openvpn rtorrent mplayer evince --noconfirm
-#sudo pacman -S dmenu scrot feh firefox ufw pidgin ntfs-3g screenfetch alsa-lib alsa-utils p7zip unrar pulseaudio --noconfirm
-#okular obs-studio veracrypt freemind filezilla cherrytree gimp libreoffice libreoffice-fresh-ru kdenlive audacity screenfetch vlc qt4 qbittorrent f2fs-tools dosfstools ntfs-3g gnome-calculator file-roller gvfs aspell-ru --noconfirm 
-#aurman -S dropbox joxi obs-linuxbrowser purple-vk-plugin purple-facebook pidgin-encryption sublime-text2 hunspell-ru --noconfirm 
+sudo pacman -S vim rtorrent mplayer firefox ufw nodejs ntfs-3g dmenu feh alsa-lib alsa-utils p7zip unrar pulseaudio --noconfirm
+aurman -S sublime-text-dev dropbox joxi --noconfirm
+#sudo pacman -S arc-gtk-theme lxappearance openvpn rtorrent mplayer evince --noconfirm
+#sudo pacman -S scrot pidgin screenfetch --noconfirm
+#okular obs-studio veracrypt freemind filezilla cherrytree gimp libreoffice libreoffice-fresh-ru kdenlive audacity screenfetch qt4 f2fs-tools dosfstools gnome-calculator file-roller gvfs aspell-ru --noconfirm 
+#aurman -S obs-linuxbrowser purple-vk-plugin purple-facebook pidgin-encryption hunspell-ru --noconfirm 
 
 echo 'Установка тем'
 #aurman -S compton terminus-ttf xkblayout-state ttf-font-awesome --noconfirm
@@ -39,4 +41,4 @@ echo 'Включаем сетевой экран'
 #sudo ufw enable
 
 echo 'Установка завершена!'
-rm -rf ~/arch_3.sh
+#rm -rf ~/arch_3.sh
