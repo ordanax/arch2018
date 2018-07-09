@@ -25,11 +25,9 @@ sudo pacman -S firefox ufw --noconfirm
 echo 'Установка тем'
 aurman -S osx-arc-shadow breeze-obsidian-cursor-theme papirus-maia-icon-theme-git --noconfirm
 
-echo 'Создаем нужные директории.'
-mkdir ~/Downloads
-mkdir ~/Documents
-mkdir ~/Music/
-mkdir ~/Video/
+echo 'Создаем нужные директории'
+sudo pacman -S xdg-user-dirs
+xdg-user-dirs-update
 mkdir ~/Dropbox/
 mkdir ~/Dropbox/WALLPAPERS
 mkdir ~/Dropbox/WALLPAPERS/GREEN/
