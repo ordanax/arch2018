@@ -55,6 +55,8 @@ rm -rf ~/Downloads/*
 
 echo 'Включаем сетевой экран'
 sudo ufw enable
+echo 'Ограничиваем траффик SSH'
+sudo ufw limit SSH
 
 echo 'Установка завершена!'
 rm -rf ~/aurman_complete.sh
