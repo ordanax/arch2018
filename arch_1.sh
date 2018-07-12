@@ -65,8 +65,27 @@ mount /dev/sda1 /mnt/boot
 swapon /dev/sda3
 mount /dev/sda4 /mnt/home
 
-echo '3.1 Выбор зеркал для загрузки. Ставим зеркало от Яндекс'
-echo "Server = http://mirror.yandex.ru/archlinux/\$repo/os/\$arch" > /etc/pacman.d/mirrorlist
+echo '3.1 Выбор зеркал для загрузки. Ставим Российские зеркала'
+echo "#Russia
+Server = http://mirror.yandex.ru/archlinux/\$repo/os/\$arch
+Server = https://mirror.yandex.ru/archlinux/\$repo/os/\$arch
+Server = http://mirror.truenetwork.ru/archlinux/\$repo/os/\$arch
+Server = http://mirror.rol.ru/archlinux/\$repo/os/\$arch
+Server = https://mirror.rol.ru/archlinux/\$repo/os/\$arch
+Server = http://mirror.aur.rocks/\$repo/os/\$arch" > /etc/pacman.d/mirrorlist
+
+#По желанию другие зеркала:
+#echo 'Украинcкие зеркала'
+#echo "#Ukraine
+#Server = http://mirrors.nix.org.ua/linux/archlinux/\$repo/os/\$arch
+#Server = http://archlinux.ip-connect.vn.ua/\$repo/os/\$arch
+#Server = https://archlinux.ip-connect.vn.ua/\$repo/os/\$arch
+#Server = https://mirrors.nix.org.ua/linux/archlinux/\$repo/os/\$arch" > /etc/pacman.d/mirrorlist
+
+#echo 'Белорусские зеркала'
+#echo '#Belarus
+#Server = http://mirror.datacenter.by/pub/archlinux/\$repo/os/\$arch
+#Server = http://ftp.byfly.by/pub/archlinux/\$repo/os/\$arch' > /etc/pacman.d/mirrorlist
 
 echo '3.2 Установка основных пакетов'
 pacstrap /mnt base base-devel

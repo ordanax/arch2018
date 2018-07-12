@@ -62,7 +62,7 @@ echo 'Ставим Xfce, LXDM и сеть'
 pacman -S xfce4 xfce4-goodies lxdm networkmanager network-manager-applet ppp --noconfirm
 
 echo 'Ставим шрифты'
-pacman -S ttf-liberation ttf-dejavu --noconfirm 
+pacman -S ttf-croscore ttf-dejavu ttf-ubuntu-font-family ttf-inconsolata ttf-liberation --noconfirm
 
 echo 'Подключаем автозагрузку менеджера входа и интернет'
 systemctl enable lxdm NetworkManager

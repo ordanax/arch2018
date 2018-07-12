@@ -3,19 +3,22 @@ echo 'Установка AUR (aurman)'
 sudo pacman -Syy
 sudo pacman -S git --noconfirm
 
-#Ставим зависимость expac-git
-git clone https://aur.archlinux.org/expac-git.git
-cd expac-git
-makepkg -si --noconfirm
-cd ..
-rm -rf expac-git
-
-#Ставим aurman
+echo 'Ставим aurman'
 git clone https://aur.archlinux.org/aurman.git
 cd aurman
 makepkg -si --noconfirm --skippgpcheck
 cd ..
 rm -rf aurman
+
+echo 'Настройка Aurman'
+touch ~/.config/aurman/aurman_config
+echo '[miscellaneous]
+cache_dir=/tmp/aurman
+keyserver=hkp://pgp.mit.edu:11371' > ~/.config/aurman/aurman_config
+echo 'Кэш aurman теперь в /tmp/aurman и сервер для ключей назначен'
+echo 'Автодополнение для aurman'
+sudo touch /etc/bash
+sudo sh aurman_complete.sh
 
 echo 'Установка программ'
 sudo pacman -S firefox ufw --noconfirm
@@ -54,4 +57,5 @@ echo 'Включаем сетевой экран'
 sudo ufw enable
 
 echo 'Установка завершена!'
+rm -rf ~/aurman_complete.sh
 rm -rf ~/arch_3.sh
