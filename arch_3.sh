@@ -43,12 +43,12 @@ tar -xzf xfce4.tar.gz -C /
 
 echo 'Ставим лого ArchLinux в меню'
 wget ordanax.ru/arch/archlinux_logo.png
-sudo mv -f ~/Downloads/archlinux_logo.png /usr/share/pixmaps/archlinux_logo.png
+sudo mv -f ~/Загрузки/archlinux_logo.png /usr/share/pixmaps/archlinux_logo.png
 
 echo 'Ставим обои на рабочий стол'
 wget ordanax.ru/arch/Deepin_Linux_Manjaro.jpg
-sudo mv -f ~/Downloads/Deepin_Linux_Manjaro.jpg ~/Dropbox/WALLPAPERS/GREEN/Deepin_Linux_Manjaro.jpg
-rm -rf ~/Downloads/*
+sudo mv -f ~/Загрузки/Deepin_Linux_Manjaro.jpg ~/Dropbox/WALLPAPERS/GREEN/Deepin_Linux_Manjaro.jpg
+rm -rf ~/Загрузки/*
 
 echo 'Включаем сетевой экран'
 sudo ufw enable
