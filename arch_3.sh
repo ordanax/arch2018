@@ -21,7 +21,7 @@ cd ..
 rm -rf aurman
 
 echo 'Установка программ'
-sudo pacman -S vim rtorrent mplayer firefox ufw nodejs ntfs-3g dmenu feh alsa-lib alsa-utils p7zip unrar pulseaudio --noconfirm
+sudo pacman -S lxappearance vim rtorrent mplayer firefox ufw nodejs ntfs-3g dmenu feh alsa-lib alsa-utils p7zip unrar pulseaudio --noconfirm
 aurman -S sublime-text-dev dropbox joxi --noconfirm
 #sudo pacman -S arc-gtk-theme lxappearance openvpn rtorrent mplayer evince --noconfirm
 #sudo pacman -S scrot pidgin screenfetch --noconfirm
