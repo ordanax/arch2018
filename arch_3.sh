@@ -41,4 +41,4 @@ echo 'Включаем сетевой экран'
 #sudo ufw enable
 
 echo 'Установка завершена!'
-#rm -rf ~/arch_3.sh
+rm -rf ~/arch_3.sh
