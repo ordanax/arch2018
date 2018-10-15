@@ -34,7 +34,6 @@ echo 'Установка тем'
 echo 'Создаем нужные директории.'
 mkdir ~/Downloads
 mkdir ~/Documents
-mkdir ~/Music/
 mkdir ~/Video/
 
 echo 'Включаем сетевой экран'
