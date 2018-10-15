@@ -68,6 +68,6 @@ genfstab -pU /mnt >> /mnt/etc/fstab
 
 echo 'Переходим в установлнную систему.'
 echo '1) Установите wget, командой: pacman -S wget'
-echo '2) Скачайте вторую часть скрипта командой: wget ordanax.ru/arch/arch_2.sh'
+echo '2) Скачайте вторую часть скрипта командой: wget raw.github.com/gitumium/arch2018/master/arch_2.sh'
 echo '3) Запустите скрипт командой: sh arch_2.sh'
 arch-chroot /mnt
