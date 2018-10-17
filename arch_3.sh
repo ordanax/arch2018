@@ -42,6 +42,6 @@ echo 'Включаем сетевой экран'
 
 
 sudo systemctl enable dropbox@p347
-
+shopt -s extglob
 echo 'Установка завершена!'
 rm -rf ~/arch_3.sh
