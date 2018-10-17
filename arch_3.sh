@@ -40,5 +40,8 @@ mkdir -p ~/Storages/usb_{a,b}
 echo 'Включаем сетевой экран'
 #sudo ufw enable
 
+
+systemctl enable dropbox@p347
+
 echo 'Установка завершена!'
 rm -rf ~/arch_3.sh
