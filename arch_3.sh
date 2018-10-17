@@ -28,6 +28,7 @@ aurman -S sublime-text-dev dropbox arc-gtk-theme openvpn evince --noconfirm
 #aurman -S obs-linuxbrowser purple-vk-plugin purple-facebook pidgin-encryption hunspell-ru --noconfirm 
 
 echo 'Установка тем'
+pacman -S neofetch --noconfirm
 aurman -S compton ls_extended --noconfirm
 
 echo 'Создаем нужные директории.'
