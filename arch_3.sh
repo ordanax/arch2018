@@ -28,7 +28,7 @@ aurman -S sublime-text-dev dropbox arc-gtk-theme openvpn evince --noconfirm
 #aurman -S obs-linuxbrowser purple-vk-plugin purple-facebook pidgin-encryption hunspell-ru --noconfirm 
 
 echo 'Установка тем'
-#aurman -S compton terminus-ttf xkblayout-state ttf-font-awesome --noconfirm
+aurman -S compton --noconfirm
 
 echo 'Создаем нужные директории.'
 mkdir ~/Downloads
