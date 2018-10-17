@@ -28,7 +28,7 @@ aurman -S sublime-text-dev dropbox arc-gtk-theme openvpn evince --noconfirm
 #aurman -S obs-linuxbrowser purple-vk-plugin purple-facebook pidgin-encryption hunspell-ru --noconfirm 
 
 echo 'Установка тем'
-pacman -S neofetch --noconfirm
+sudo pacman -S neofetch --noconfirm
 aurman -S compton polybar ls_extended ttf-roboto-mono --noconfirm
 
 echo 'Создаем нужные директории.'
@@ -41,7 +41,7 @@ echo 'Включаем сетевой экран'
 #sudo ufw enable
 
 
-systemctl enable dropbox@p347
+sudo systemctl enable dropbox@p347
 
 echo 'Установка завершена!'
 rm -rf ~/arch_3.sh
