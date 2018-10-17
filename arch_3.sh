@@ -29,7 +29,7 @@ aurman -S sublime-text-dev dropbox arc-gtk-theme openvpn evince --noconfirm
 
 echo 'Установка тем'
 pacman -S neofetch --noconfirm
-aurman -S compton ls_extended --noconfirm
+aurman -S compton ls_extended ttf-roboto-mono --noconfirm
 
 echo 'Создаем нужные директории.'
 mkdir ~/Downloads
