@@ -22,7 +22,7 @@ rm -rf aurman
 
 echo 'Установка программ'
 sudo pacman -S lxappearance vim rtorrent mplayer ufw nodejs ntfs-3g dmenu feh alsa-lib alsa-utils chromium p7zip unrar pulseaudio --noconfirm
-aurman -S sublime-text-dev dropbox arc-gtk-theme openvpn cmus evince openssh sxiv yarn --noconfirm
+aurman -S sublime-text-dev dropbox arc-gtk-theme openvpn cmus evince openssh sxiv yarn virtualbox --noconfirm
 #sudo pacman -S scrot pidgin screenfetch --noconfirm
 #okular obs-studio veracrypt freemind filezilla cherrytree gimp libreoffice libreoffice-fresh-ru kdenlive audacity screenfetch qt4 f2fs-tools dosfstools gnome-calculator file-roller gvfs aspell-ru --noconfirm 
 #aurman -S obs-linuxbrowser purple-vk-plugin purple-facebook pidgin-encryption hunspell-ru --noconfirm 
