@@ -22,10 +22,10 @@ rm -rf aurman
 
 echo 'Установка программ'
 sudo pacman -S most lxappearance vim rtorrent mplayer ufw nodejs ntfs-3g dmenu feh alsa-lib alsa-utils chromium p7zip unrar pulseaudio --noconfirm
-aurman -S sublime-text-dev dropbox arc-gtk-theme openvpn cmus evince openssh sxiv yarn virtualbox imlib2-webp-git --noconfirm
+aurman -S sublime-text-dev arc-gtk-theme openvpn cmus evince openssh sxiv yarn virtualbox imlib2-webp-git --noconfirm
 #sudo pacman -S scrot pidgin screenfetch --noconfirm
 #okular obs-studio veracrypt freemind filezilla cherrytree gimp libreoffice libreoffice-fresh-ru kdenlive audacity screenfetch qt4 f2fs-tools dosfstools gnome-calculator file-roller gvfs aspell-ru --noconfirm 
-#aurman -S obs-linuxbrowser purple-vk-plugin purple-facebook pidgin-encryption hunspell-ru --noconfirm 
+#aurman -S dropbox obs-linuxbrowser purple-vk-plugin purple-facebook pidgin-encryption hunspell-ru --noconfirm 
 
 echo 'Установка тем'
 sudo pacman -S neofetch --noconfirm
@@ -41,7 +41,7 @@ echo 'Включаем сетевой экран'
 #sudo ufw enable
 
 
-sudo systemctl enable dropbox@p347
+# sudo systemctl enable dropbox@p347
 shopt -s extglob
 echo 'Установка завершена!'
 rm -rf ~/arch_3.sh
