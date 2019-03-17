@@ -29,13 +29,15 @@ tar -xzf xfce4.tar.gz -C ~/
 
 echo 'Ставим лого ArchLinux в меню'
 wget git.io/arch_logo.png
-sudo mv -f ~/Загрузки/arch_logo.png /usr/share/pixmaps/arch_logo.png
+sudo mv -f ~/arch_logo.png /usr/share/pixmaps/arch_logo.png
+rm -rf ~/arch_logo.png
 
 echo 'Ставим обои на рабочий стол'
 wget git.io/bg.jpg
 sudo rm -rf /usr/share/backgrounds/xfce/* #Удаляем стандартрые обои
-sudo mv -f ~/Загрузки/bg.jpg /usr/share/backgrounds/xfce/bg.jpg
-rm -rf ~/Загрузки/*
+sudo mv -f ~/bg.jpg /usr/share/backgrounds/xfce/bg.jpg
+rm -rf ~/bg.jpg
+
 
 echo 'Включаем сетевой экран'
 sudo ufw enable
