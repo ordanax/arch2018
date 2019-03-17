@@ -18,14 +18,13 @@ sudo pacman -S xdg-user-dirs
 xdg-user-dirs-update
 
 echo 'Качаем и устанавливаем настройки Xfce'
-# Чтобы сделать копию ваших настоек XFCE выполните команду ниже.
+# Чтобы сделать копию ваших настоек XFCE перейдите в категорию ~/.config/xfce4 открйте в этой категории терминал и выполните команду ниже.
 # tar -czf xfce4.tar.gz ~/.config/xfce4
-# Выгрузите архив в интернет и скорректируйте ссылку на XFCE файл заменив ссылку http://ordanax.ru/arch_linux/xfce4.tar.gz на свою.
+# Выгрузите архив в интернет и скорректируйте ссылку на XFCE файл заменив ссылку на свою.
 
-# cd ~/Downloads
-# wget http://ordanax.ru/arch/xfce4.tar.gz
-#rm -rf ~/.config/xfce4
-# tar -xzf xfce4.tar.gz -C /
+cd ~/Downloads
+wget git.io/xfce4.tar.gz
+tar -xzf xfce4.tar.gz -C ~/
 
 echo 'Ставим лого ArchLinux в меню'
 wget git.io/arch_logo.png
