@@ -1,6 +1,7 @@
 #!/bin/bash
-echo 'Прписываем имя компьютера'
-echo "ordanax-pc" > /etc/hostname
+boot_dialog --title "Hostname" --inputbox "\nВведите имя компьютера.\n" 10 60
+hostname="$DIALOG_RESULT"
+echo $hostname > /etc/hostname
 ln -svf /usr/share/zoneinfo/Asia/Yekaterinburg /etc/localtime
 
 echo '3.4 Добавляем русскую локаль системы'
@@ -34,11 +35,12 @@ grub-mkconfig -o /boot/grub/grub.cfg
 echo 'Ставим программу для Wi-fi'
 pacman -S dialog wpa_supplicant --noconfirm 
 
-echo 'Добавляем пользователя'
-useradd -m -g users -G wheel -s /bin/bash ordanax
+boot_dialog --title "User name" --inputbox "Введите имя пользователя.\n" 10 60
+username="$DIALOG_RESULT"
+useradd -m -g users -G wheel -s /bin/bash $username
 
 echo 'Устанавливаем пароль пользователя'
-passwd ordanax
+passwd $username
 echo 'Устанавливаем SUDO'
 echo '%wheel ALL=(ALL) ALL' >> /etc/sudoers
 
