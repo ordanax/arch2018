@@ -7,8 +7,8 @@ sudo rm -rf ~/yay-install.sh
 
 echo 'Установка программ'
 sudo pacman -S firefox ufw --noconfirm
-# obs-studio veracrypt freemind filezilla cherrytree gimp libreoffice libreoffice-fresh-ru kdenlive audacity pidgin screenfetch vlc qt4 qbittorrent f2fs-tools dosfstools ntfs-3g alsa-lib alsa-utils gnome-calculator file-roller p7zip unrar gvfs aspell-ru pulseaudio --noconfirm 
-# aurman -S dropbox joxi obs-linuxbrowser xflux xflux-gui-git purple-vk-plugin purple-facebook pidgin-encryption sublime-text2 hunspell-ru pamac-aur --noconfirm 
+# obs-studio veracrypt freemind filezilla cherrytree gimp libreoffice libreoffice-fresh-ru kdenlive audacity screenfetch vlc qt4 qbittorrent f2fs-tools dosfstools ntfs-3g alsa-lib alsa-utils gnome-calculator file-roller p7zip unrar gvfs aspell-ru pulseaudio --noconfirm 
+# yay -S dropbox flameshot-git obs-linuxbrowser xflux xflux-gui-git sublime-text2 hunspell-ru pamac-aur --noconfirm 
 
 echo 'Установка тем'
 aurman -S osx-arc-shadow breeze-obsidian-cursor-theme papirus-maia-icon-theme-git --noconfirm
@@ -16,18 +16,16 @@ aurman -S osx-arc-shadow breeze-obsidian-cursor-theme papirus-maia-icon-theme-gi
 echo 'Создаем нужные директории'
 sudo pacman -S xdg-user-dirs
 xdg-user-dirs-update
-mkdir ~/Dropbox/
-mkdir ~/Dropbox/WALLPAPERS
-mkdir ~/Dropbox/WALLPAPERS/GREEN/
 
 echo 'Качаем и устанавливаем настройки Xfce'
 # Чтобы сделать копию ваших настоек XFCE выполните команду ниже.
 # tar -czf xfce4.tar.gz ~/.config/xfce4
 # Выгрузите архив в интернет и скорректируйте ссылку на XFCE файл заменив ссылку http://ordanax.ru/arch_linux/xfce4.tar.gz на свою.
-cd ~/Downloads
-wget http://ordanax.ru/arch/xfce4.tar.gz
+
+# cd ~/Downloads
+# wget http://ordanax.ru/arch/xfce4.tar.gz
 #rm -rf ~/.config/xfce4
-tar -xzf xfce4.tar.gz -C /
+# tar -xzf xfce4.tar.gz -C /
 
 echo 'Ставим лого ArchLinux в меню'
 wget ordanax.ru/arch/archlinux_logo.png
