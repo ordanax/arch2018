@@ -70,7 +70,5 @@ pacman -S ttf-liberation ttf-dejavu --noconfirm
 echo 'Подключаем автозагрузку менеджера входа и интернет'
 systemctl enable lxdm NetworkManager
 
-echo 'Перезагрузка. После перезагрузки заходим под пользователем'
+echo 'Перезагрузите систему'
 exit
-read -p "Пауза 3 ceк." -t 3
-reboot
