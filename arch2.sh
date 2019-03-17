@@ -70,5 +70,7 @@ pacman -S ttf-liberation ttf-dejavu --noconfirm
 echo 'Подключаем автозагрузку менеджера входа и интернет'
 systemctl enable lxdm NetworkManager
 
-echo 'Перезагрузите систему'
+echo 'Базовая установка завершена! Перезагрузите систему.'
+echo 'Если хотите подключить AUR и установить мои конфиги XFCE, тогда установит wget и выполните команду:'
+echo 'wget git.io/arch3.sh && sh arch3.sh'
 exit
