@@ -1,5 +1,5 @@
 #!/bin/bash
-boot_dialog --title "Hostname" --inputbox "\nВведите имя компьютера.\n" 10 60
+boot_dialog --title "Hostname" --inputbox "\nPlease enter a name for this host.\n" 10 60
 hostname="$DIALOG_RESULT"
 echo $hostname > /etc/hostname
 ln -svf /usr/share/zoneinfo/Asia/Yekaterinburg /etc/localtime
@@ -35,7 +35,7 @@ grub-mkconfig -o /boot/grub/grub.cfg
 echo 'Ставим программу для Wi-fi'
 pacman -S dialog wpa_supplicant --noconfirm 
 
-boot_dialog --title "User name" --inputbox "Введите имя пользователя.\n" 10 60
+boot_dialog --title "User name" --inputbox "Please enter a name for this user.\n" 10 60
 username="$DIALOG_RESULT"
 useradd -m -g users -G wheel -s /bin/bash $username
 
