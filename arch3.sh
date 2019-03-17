@@ -26,6 +26,8 @@ cd ~/Downloads
 wget git.io/xfce4.tar.gz
 rm -rf ~/.config/xfce4/*
 tar -xzf xfce4.tar.gz -C ~/
+rm -rf ~/xfce4.tar.gz
+
 
 echo 'Ставим лого ArchLinux в меню'
 wget git.io/arch_logo.png
