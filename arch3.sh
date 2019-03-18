@@ -1,5 +1,5 @@
 #!/bin/bash
-cd ~/tmp/
+cd ~/Downloads
 echo 'Установка AUR (yay)'
 sudo pacman -Syy
 sudo pacman -S wget --noconfirm
@@ -29,14 +29,14 @@ tar -xzf xfce4.tar.gz -C ~/
 
 echo 'Ставим лого ArchLinux в меню'
 wget git.io/arch_logo.png
-sudo mv -f ~/arch_logo.png /usr/share/pixmaps/arch_logo.png
+sudo mv -f ~/Downloads/arch_logo.png /usr/share/pixmaps/arch_logo.png
 
 echo 'Ставим обои на рабочий стол'
 wget git.io/bg.jpg
 sudo rm -rf /usr/share/backgrounds/xfce/* #Удаляем стандартрые обои
-sudo mv -f ~/bg.jpg /usr/share/backgrounds/xfce/bg.jpg
+sudo mv -f ~/Downloads/bg.jpg /usr/share/backgrounds/xfce/bg.jpg
 
-sudo rm -rf cd ~/tmp/*
+sudo rm -rf ~/Downloads
 
 echo 'Включаем сетевой экран'
 sudo ufw enable
