@@ -1,4 +1,4 @@
-# arch2018
+# ArchLinux Fast Install
 This script install ArchLinux XFCE + AUR + XFCE config. Also you can add own /home directory as well as XFCE config.
 
 Этот скрипт для персональной установки ArchLinux XFCE + AUR + XFCE config. Вы также можете добавить копию директории /home по той же схеме, как добавленна XFCE config.
