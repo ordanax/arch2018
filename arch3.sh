@@ -42,4 +42,7 @@ sudo rm -rf ~/Downloads
 echo 'Включаем сетевой экран'
 sudo ufw enable
 
+echo 'Добавляем в автозагрузку:'
+sudo systemctl enable ufw
+
 echo 'Установка завершена!'
