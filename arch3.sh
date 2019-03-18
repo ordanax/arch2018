@@ -45,8 +45,4 @@ sudo ufw enable
 echo 'Добавляем в автозагрузку:'
 sudo systemctl enable ufw
 
-# Настройка авто входа без DМ 
-yay -S xlogin-git --noconfirm
-systemctl enable xlogin@$username
-
 echo 'Установка завершена!'
