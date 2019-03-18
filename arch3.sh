@@ -1,10 +1,9 @@
 #!/bin/bash
-cd ~/Downloads 
+cd ~/tmp/
 echo 'Установка AUR (yay)'
 sudo pacman -Syy
 sudo pacman -S wget --noconfirm
 wget git.io/yay-install.sh && sh yay-install.sh
-sudo rm -rf ~/yay-install.sh
 
 echo 'Установка программ'
 sudo pacman -S firefox ufw --noconfirm
@@ -27,8 +26,6 @@ echo 'Качаем и устанавливаем настройки Xfce'
 wget git.io/xfce4.tar.gz
 rm -rf ~/.config/xfce4/*
 tar -xzf xfce4.tar.gz -C ~/
-rm -rf ~/xfce4.tar.gz
-
 
 echo 'Ставим лого ArchLinux в меню'
 wget git.io/arch_logo.png
@@ -39,10 +36,9 @@ wget git.io/bg.jpg
 sudo rm -rf /usr/share/backgrounds/xfce/* #Удаляем стандартрые обои
 sudo mv -f ~/bg.jpg /usr/share/backgrounds/xfce/bg.jpg
 
-sudo rm -rf ~/Downloads
+sudo rm -rf cd ~/tmp/*
 
 echo 'Включаем сетевой экран'
 sudo ufw enable
 
 echo 'Установка завершена!'
-rm -rf ~/arch3.sh
