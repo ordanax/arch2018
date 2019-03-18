@@ -2,7 +2,7 @@
 This script install ArchLinux XFCE + AUR + XFCE config. Also you can add own /home directory as well as XFCE config.
 
 # Описание
-Этот скрипт для быстрой установки ArchLinux XFCE + AUR + XFCE с вашими личными настройками (при условии чт вы его изменили под себя, в противном случае с моими настройками).
+Этот скрипт для быстрой установки ArchLinux XFCE + AUR + XFCE с вашими личными настройками (при условии, что вы его изменили под себя, в противном случае с моими настройками).
 
 Cкрипт основан на моем чек листе ручной установке ArchLinux https://vk.cc/7JTg6U
 Разметка MBR c BIOS. C UEFI пока установки нет. В планах.
