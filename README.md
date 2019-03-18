@@ -41,6 +41,7 @@ Cостоит из 3 частей.
 
 # Контакты
 Наша группа по Arch Linux https://vk.com/arch4u
+
 Linux Chat https://t.me/linux4u
 
 # История изменений
