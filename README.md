@@ -8,7 +8,9 @@ This script install ArchLinux XFCE + AUR + XFCE config. Also you can add own /ho
 
 Cкрипт основан на моем чек листе ручной установке ArchLinux https://vk.cc/7JTg6U
 Разметка MBR c BIOS. C UEFI пока установки нет. В планах.
+
 Cостоит из 3 частей. 
+
 Видео с демонстрацией работы скрипта https://www.youtube.com/watch?v=nvVF_qKDUeM
 
 # Установка 
