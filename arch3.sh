@@ -25,7 +25,7 @@ echo 'Качаем и устанавливаем настройки Xfce'
 
 
 wget git.io/xfce4.tar.gz
-# rm -rf ~/.config/xfce4/*
+rm -rf ~/.config/xfce4/*
 tar -xzf xfce4.tar.gz -C ~/
 
 echo 'Ставим лого ArchLinux в меню'
@@ -46,7 +46,7 @@ echo 'Добавляем в автозагрузку:'
 sudo systemctl enable ufw
 
 # Настройка авто входа без DМ 
-yay -S xlogin-git --noconfirm
-systemctl enable xlogin@$USER
+# yay -S xlogin-git --noconfirm
+# systemctl enable xlogin@$USER
 
 echo 'Установка завершена!'
