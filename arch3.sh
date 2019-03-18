@@ -1,4 +1,5 @@
 #!/bin/bash
+mkdir ~/Downloads
 cd ~/Downloads
 echo 'Установка AUR (yay)'
 sudo pacman -Syy
