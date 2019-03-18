@@ -4,7 +4,7 @@ cd ~/Downloads
 echo 'Установка AUR (yay)'
 sudo pacman -Syy
 sudo pacman -S wget --noconfirm
-wget git.io/yay-install.sh && sh yay-install.sh
+wget git.io/yay-install.sh && sh yay-install.sh --noconfirm
 
 echo 'Установка программ'
 sudo pacman -S firefox ufw --noconfirm
@@ -15,7 +15,7 @@ echo 'Установка тем'
 yay -S osx-arc-shadow breeze-obsidian-cursor-theme papirus-maia-icon-theme-git --noconfirm
 
 echo 'Создаем нужные директории'
-sudo pacman -S xdg-user-dirs
+sudo pacman -S xdg-user-dirs --noconfirm
 xdg-user-dirs-update
 
 echo 'Качаем и устанавливаем настройки Xfce'
