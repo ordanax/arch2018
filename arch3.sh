@@ -25,7 +25,7 @@ echo 'Качаем и устанавливаем настройки Xfce'
 
 
 wget git.io/xfce4.tar.gz
-rm -rf ~/.config/xfce4/*
+sudo rm -rf ~/.config/xfce4/*
 tar -xzf xfce4.tar.gz -C ~/
 
 echo 'Ставим лого ArchLinux в меню'
