@@ -23,9 +23,8 @@ echo 'Качаем и устанавливаем настройки Xfce'
 # tar -czf xfce4.tar.gz .config/xfce4
 # Выгрузите архив в интернет и скорректируйте ссылку на XFCE файл заменив ссылку на свою.
 
-
-wget git.io/xfce4.tar.gz
 sudo rm -rf ~/.config/xfce4/*
+wget git.io/xfce4.tar.gz
 tar -xzf xfce4.tar.gz -C ~/
 
 echo 'Ставим лого ArchLinux в меню'
