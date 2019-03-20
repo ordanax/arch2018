@@ -78,6 +78,15 @@ echo 'Качаем и устанавливаем настройки Xfce'
 wget git.io/xfce4.tar.gz
 tar -xzf xfce4.tar.gz -C ~/
 
+echo 'Ставим лого ArchLinux в меню'
+wget git.io/arch_logo.png
+sudo mv -f ~/Downloads/arch_logo.png /usr/share/pixmaps/arch_logo.png
+
+echo 'Ставим обои на рабочий стол'
+wget git.io/bg.jpg
+sudo rm -rf /usr/share/backgrounds/xfce/* #Удаляем стандартрые обои
+sudo mv -f ~/Downloads/bg.jpg /usr/share/backgrounds/xfce/bg.jpg
+
 echo 'Установка завершена! Перезагрузите систему.'
 echo 'Если хотите подключить AUR и программы, тогда после перезагрзки и входа в систему, установите wget (sudo pacman -S wget) и выполните команду:'
 echo 'wget git.io/arch3.sh && sh arch3.sh'
