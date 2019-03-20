@@ -13,6 +13,7 @@ echo 'Качаем и устанавливаем настройки Xfce'
 
 sudo rm -rf ~/.config/xfce4/*
 wget git.io/xfce4.tar.gz
+sudo rm -rf ~/.config/xfce4/*
 tar -xzf xfce4.tar.gz -C ~/
 
 echo 'Установка программ'
