@@ -10,6 +10,15 @@ echo 'Создаем нужные директории'
 sudo pacman -S xdg-user-dirs --noconfirm
 xdg-user-dirs-update
 
+echo 'Качаем и устанавливаем настройки Xfce'
+# Чтобы сделать копию ваших настоек XFCE перейдите в домашнюю директорию ~/username открйте в этой категории терминал и выполните команду ниже.
+# tar -czf xfce4.tar.gz .config/xfce4
+# Выгрузите архив в интернет и скорректируйте ссылку на XFCE файл заменив ссылку на свою.
+
+rm -rf ~/.config/xfce4/
+wget git.io/xfce4.tar.gz
+tar -xzf xfce4.tar.gz -C ~/
+
 echo 'Установка программ'
 sudo pacman -S firefox ufw qt4 f2fs-tools dosfstools ntfs-3g alsa-lib alsa-utils file-roller p7zip unrar gvfs aspell-ru pulseaudio --noconfirm
 # obs-studio veracrypt freemind filezilla cherrytree gimp libreoffice libreoffice-fresh-ru kdenlive audacity screenfetch vlc qbittorrent gnome-calculator --noconfirm 
