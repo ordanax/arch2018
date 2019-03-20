@@ -14,7 +14,6 @@ echo 'Качаем и устанавливаем настройки Xfce'
 sudo rm -rf ~/.config/xfce4/*
 wget git.io/xfce4.tar.gz
 tar -xzf xfce4.tar.gz -C ~/
-sudo rm -rf ~/Downloads
 
 echo 'Установка программ'
 sudo pacman -S firefox ufw qt4 f2fs-tools dosfstools ntfs-3g alsa-lib alsa-utils file-roller p7zip unrar gvfs aspell-ru pulseaudio --noconfirm
@@ -42,5 +41,7 @@ sudo ufw enable
 
 echo 'Добавляем в автозагрузку:'
 sudo systemctl enable ufw
+
+sudo rm -rf ~/Downloads
 
 echo 'Установка завершена!'
