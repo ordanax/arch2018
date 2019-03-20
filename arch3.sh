@@ -6,6 +6,10 @@ sudo pacman -Syy
 sudo pacman -S wget --noconfirm
 wget git.io/yay-install.sh && sh yay-install.sh --noconfirm
 
+echo 'Создаем нужные директории'
+sudo pacman -S xdg-user-dirs --noconfirm
+xdg-user-dirs-update
+
 echo 'Качаем и устанавливаем настройки Xfce'
 # Чтобы сделать копию ваших настоек XFCE перейдите в домашнюю директорию ~/username открйте в этой категории терминал и выполните команду ниже.
 # tar -czf xfce4.tar.gz .config/xfce4
@@ -22,10 +26,6 @@ sudo pacman -S firefox ufw qt4 f2fs-tools dosfstools ntfs-3g alsa-lib alsa-utils
 
 echo 'Установка тем'
 yay -S osx-arc-shadow breeze-obsidian-cursor-theme papirus-maia-icon-theme-git --noconfirm
-
-echo 'Создаем нужные директории'
-sudo pacman -S xdg-user-dirs --noconfirm
-xdg-user-dirs-update
 
 echo 'Ставим лого ArchLinux в меню'
 wget git.io/arch_logo.png
