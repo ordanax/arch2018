@@ -17,7 +17,7 @@ echo 'Качаем и устанавливаем настройки Xfce'
 # Выгрузите архив в интернет и скорректируйте ссылку на XFCE файл заменив ссылку на свою.
 wget git.io/xfce4.tar.gz
 sudo rm -rf ~/.config/xfce4/panel/
-tar -xzf xfce4.tar.gz -C ~/
+sudo tar -xzf xfce4.tar.gz -C ~/
 
 echo 'Установка программ'
 sudo pacman -S firefox ufw qt4 f2fs-tools dosfstools ntfs-3g alsa-lib alsa-utils file-roller p7zip unrar gvfs aspell-ru pulseaudio --noconfirm
