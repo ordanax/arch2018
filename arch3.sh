@@ -1,5 +1,5 @@
 #!/bin/bash
-rm -rf ~/.config/xfce4/*
+sudo rm -rf ~/.config/xfce4/*
 mkdir ~/Downloads
 cd ~/Downloads
 echo 'Установка AUR (yay)'
@@ -15,7 +15,7 @@ echo 'Качаем и устанавливаем настройки Xfce'
 # Чтобы сделать копию ваших настоек XFCE перейдите в домашнюю директорию ~/username открйте в этой категории терминал и выполните команду ниже.
 # tar -czf xfce4.tar.gz .config/xfce4
 # Выгрузите архив в интернет и скорректируйте ссылку на XFCE файл заменив ссылку на свою.
-
+reboot
 wget git.io/xfce4.tar.gz
 tar -xzf xfce4.tar.gz -C ~/
 
