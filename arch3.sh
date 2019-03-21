@@ -1,5 +1,4 @@
 #!/bin/bash
-rm -rf ~/.config/xfce4/*
 mkdir ~/Downloads
 cd ~/Downloads
 echo 'Установка AUR (yay)'
@@ -17,6 +16,7 @@ echo 'Качаем и устанавливаем настройки Xfce'
 # Выгрузите архив в интернет и скорректируйте ссылку на XFCE файл заменив ссылку на свою.
 reboot
 wget git.io/xfce4.tar.gz
+rm -rf ~/.config/xfce4/*
 rm -rf ~/.config/xfce4/panel/
 tar -xzf xfce4.tar.gz -C ~/
 
