@@ -43,5 +43,6 @@ echo 'Добавляем в автозагрузку:'
 sudo systemctl enable ufw
 
 sudo rm -rf ~/Downloads
+sudo rm -rf ~/arch3.sh
 
 echo 'Установка завершена!'
