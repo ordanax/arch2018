@@ -1,5 +1,5 @@
 #!/bin/bash
-rm -rf ~/.config/xfce4/
+rm -rf ~/.config/xfce4/*
 mkdir ~/Downloads
 cd ~/Downloads
 echo 'Установка AUR (yay)'
