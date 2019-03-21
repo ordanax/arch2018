@@ -25,7 +25,7 @@ sudo pacman -S firefox ufw qt4 f2fs-tools dosfstools ntfs-3g alsa-lib alsa-utils
 # yay -S dropbox flameshot-git obs-linuxbrowser xflux xflux-gui-git sublime-text2 hunspell-ru pamac-aur --noconfirm 
 
 echo 'Установка тем'
-yay -S osx-arc-shadow papirus-maia-icon-theme-git breeze-obsidian-cursor-theme --noconfirm
+yay -S osx-arc-shadow papirus-maia-icon-theme-git breeze-default-cursor-theme --noconfirm
 
 echo 'Ставим лого ArchLinux в меню'
 wget git.io/arch_logo.png
