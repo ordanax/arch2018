@@ -64,15 +64,6 @@ pacman -S $gui_install
 echo 'Ставим Xfce, LXDM и сеть'
 pacman -S xfce4 xfce4-goodies lxdm networkmanager network-manager-applet ppp --noconfirm
 
-echo 'Качаем и устанавливаем настройки Xfce'
-pacman -S wget --noconfirm
-# Чтобы сделать копию ваших настоек XFCE перейдите в домашнюю директорию ~/username открйте в этой категории терминал и выполните команду ниже.
-# tar -czf xfce4.tar.gz .config/xfce4
-# Выгрузите архив в интернет и скорректируйте ссылку на XFCE файл заменив ссылку на свою.
-wget git.io/xfce4.tar.gz
-# sudo rm -rf ~/.config/xfce4/panel/
-sudo tar -xzf xfce4.tar.gz -C ~/
-
 echo 'Ставим шрифты'
 pacman -S ttf-liberation ttf-dejavu --noconfirm 
 
