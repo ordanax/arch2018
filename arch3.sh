@@ -1,5 +1,5 @@
 #!/bin/bash
-# rm -rf ~/.config/xfce4/*
+rm -rf ~/.config/xfce4/*
 mkdir ~/Downloads
 cd ~/Downloads
 echo 'Установка AUR (yay)'
@@ -34,6 +34,16 @@ echo 'Ставим обои на рабочий стол'
 wget git.io/bg.jpg
 sudo rm -rf /usr/share/backgrounds/xfce/* #Удаляем стандартрые обои
 sudo mv -f ~/Downloads/bg.jpg /usr/share/backgrounds/xfce/bg.jpg
+
+echo 'Качаем и устанавливаем настройки Xfce'
+pacman -S wget --noconfirm
+# Чтобы сделать копию ваших настоек XFCE перейдите в домашнюю директорию ~/username открйте в этой категории терминал и выполните команду ниже.
+# tar -czf xfce4.tar.gz .config/xfce4
+# Выгрузите архив в интернет и скорректируйте ссылку на XFCE файл заменив ссылку на свою.
+wget git.io/xfce4.tar.gz
+sudo rm -rf ~/.config/xfce4/panel/
+sudo rm -rf ~/.config/xfce4/*
+sudo tar -xzf xfce4.tar.gz -C ~/
 
 echo 'Включаем сетевой экран'
 sudo ufw enable
