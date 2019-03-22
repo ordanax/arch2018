@@ -26,6 +26,9 @@ mkinitcpio -p linux
 echo 'Создаем root пароль'
 passwd
 
+echo 'Устанавливаем пароль пользователя'
+passwd $username
+
 echo '3.5 Устанавливаем загрузчик'
 pacman -Syy
 pacman -S grub --noconfirm 
@@ -40,8 +43,6 @@ pacman -S dialog wpa_supplicant --noconfirm
 echo 'Добавляем пользователя'
 useradd -m -g users -G wheel -s /bin/bash $username
 
-echo 'Устанавливаем пароль пользователя'
-passwd $username
 echo 'Устанавливаем SUDO'
 echo '%wheel ALL=(ALL) ALL' >> /etc/sudoers
 
