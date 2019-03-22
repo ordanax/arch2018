@@ -23,6 +23,16 @@ elif [[ $prog_set == 0 ]]; then
   echo 'Установка программ пропущена.'
 fi
 
+echo 'Качаем и устанавливаем настройки Xfce'
+pacman -S wget --noconfirm
+# Чтобы сделать копию ваших настоек XFCE перейдите в домашнюю директорию ~/username открйте в этой категории терминал и выполните команду ниже.
+# tar -czf xfce4.tar.gz .config/xfce4
+# Выгрузите архив в интернет и скорректируйте ссылку на XFCE файл заменив ссылку на свою.
+wget git.io/xfce4.tar.gz
+sudo rm -rf ~/.config/xfce4/panel/
+sudo rm -rf ~/.config/xfce4/*
+sudo tar -xzf xfce4.tar.gz -C ~/
+
 echo 'Установка тем'
 yay -S osx-arc-shadow papirus-maia-icon-theme-git breeze-default-cursor-theme --noconfirm
 
@@ -35,15 +45,7 @@ wget git.io/bg.jpg
 sudo rm -rf /usr/share/backgrounds/xfce/* #Удаляем стандартрые обои
 sudo mv -f ~/Downloads/bg.jpg /usr/share/backgrounds/xfce/bg.jpg
 
-echo 'Качаем и устанавливаем настройки Xfce'
-pacman -S wget --noconfirm
-# Чтобы сделать копию ваших настоек XFCE перейдите в домашнюю директорию ~/username открйте в этой категории терминал и выполните команду ниже.
-# tar -czf xfce4.tar.gz .config/xfce4
-# Выгрузите архив в интернет и скорректируйте ссылку на XFCE файл заменив ссылку на свою.
-wget git.io/xfce4.tar.gz
-sudo rm -rf ~/.config/xfce4/panel/
-sudo rm -rf ~/.config/xfce4/*
-sudo tar -xzf xfce4.tar.gz -C ~/
+
 
 echo 'Включаем сетевой экран'
 sudo ufw enable
