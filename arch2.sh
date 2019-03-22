@@ -6,6 +6,12 @@ echo 'Прописываем имя компьютера'
 echo $hostname > /etc/hostname
 ln -svf /usr/share/zoneinfo/Asia/Yekaterinburg /etc/localtime
 
+echo 'Создаем root пароль'
+passwd
+
+echo 'Устанавливаем пароль пользователя'
+passwd $username
+
 echo '3.4 Добавляем русскую локаль системы'
 echo "en_US.UTF-8 UTF-8" > /etc/locale.gen
 echo "ru_RU.UTF-8 UTF-8" >> /etc/locale.gen 
@@ -22,12 +28,6 @@ echo 'FONT=cyr-sun16' >> /etc/vconsole.conf
 
 echo 'Создадим загрузочный RAM диск'
 mkinitcpio -p linux
-
-echo 'Создаем root пароль'
-passwd
-
-echo 'Устанавливаем пароль пользователя'
-passwd $username
 
 echo '3.5 Устанавливаем загрузчик'
 pacman -Syy
