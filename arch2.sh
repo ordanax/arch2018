@@ -6,12 +6,6 @@ echo 'Прописываем имя компьютера'
 echo $hostname > /etc/hostname
 ln -svf /usr/share/zoneinfo/Asia/Yekaterinburg /etc/localtime
 
-echo 'Создаем root пароль'
-passwd
-
-echo 'Устанавливаем пароль пользователя'
-passwd $username
-
 echo '3.4 Добавляем русскую локаль системы'
 echo "en_US.UTF-8 UTF-8" > /etc/locale.gen
 echo "ru_RU.UTF-8 UTF-8" >> /etc/locale.gen 
@@ -42,6 +36,12 @@ pacman -S dialog wpa_supplicant --noconfirm
 
 echo 'Добавляем пользователя'
 useradd -m -g users -G wheel -s /bin/bash $username
+
+echo 'Создаем root пароль'
+passwd
+
+echo 'Устанавливаем пароль пользователя'
+passwd $username
 
 echo 'Устанавливаем SUDO'
 echo '%wheel ALL=(ALL) ALL' >> /etc/sudoers
