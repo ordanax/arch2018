@@ -45,8 +45,6 @@ wget git.io/bg.jpg
 sudo rm -rf /usr/share/backgrounds/xfce/* #Удаляем стандартрые обои
 sudo mv -f ~/Downloads/bg.jpg /usr/share/backgrounds/xfce/bg.jpg
 
-
-
 echo 'Включаем сетевой экран'
 sudo ufw enable
 
