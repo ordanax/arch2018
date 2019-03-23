@@ -54,6 +54,11 @@ Our Arch Linux Team https://vk.com/arch4u
 
 Linux Chat https://t.me/linux4u
 
+
+
+
+
+
 #################################################
 # ArchLinux Fast Install v1.0.2
 #################################################
