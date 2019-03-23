@@ -1,4 +1,4 @@
-# ArchLinux Fast Install v1.0.0
+# ArchLinux Fast Install v1.0.2
 This script install ArchLinux XFCE + AUR + XFCE config. Also you can add own /home directory as well as XFCE config.
 
 # Описание
