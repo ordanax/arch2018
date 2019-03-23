@@ -52,7 +52,7 @@ Cостоит из 3 частей.
 Linux Chat https://t.me/linux4u
 
 # История изменений
-### 23.03.2019 ArchLinux Fast Install v1.0.1
+### 23.03.2019 ArchLinux Fast Install v1.0.2
 - Добавлен выбор установки рекомендуемых программ
 
 ### 21.03.2019 ArchLinux Fast Install v1.0.1
