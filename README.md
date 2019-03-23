@@ -1,6 +1,6 @@
-##############################################################
+#########################################################
 # ArchLinux Fast Install v1.0.2
-##############################################################
+#########################################################
 
 This script install ArchLinux XFCE + AUR + XFCE config. Also you can add own /home directory as well as XFCE config.
 
@@ -14,7 +14,7 @@ MBR markup with BIOS. C UEFI yet no installation. In the plans.
 
 Consists of 3 parts.
 
-Video demonstration of the script https://www.youtube.com/watch?v=
+Video demonstration of the script https://www.youtube.com/watch?v=nvVF_qKDUeM
 
 # Installation
 1) Download and burn the Arch Linux ISO image on a USB flash drive https://www.archlinux.org/download/
@@ -54,9 +54,9 @@ Our Arch Linux Team https://vk.com/arch4u
 
 Linux Chat https://t.me/linux4u
 
-##############################################################
+#########################################################
 # ArchLinux Fast Install v1.0.2
-##############################################################
+#########################################################
 
 # Описание
 Этот скрипт не задумывался, как обычный установочный с большим выбором DE, разметкой диска и т.д.
