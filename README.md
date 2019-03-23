@@ -1,6 +1,7 @@
-###############################
+##############################################################
 # ArchLinux Fast Install v1.0.2
-###############################
+##############################################################
+
 This script install ArchLinux XFCE + AUR + XFCE config. Also you can add own /home directory as well as XFCE config.
 
 # Description
@@ -50,11 +51,12 @@ See notes in the script itself.
 
 # Contacts
 Our Arch Linux Team https://vk.com/arch4u
+
 Linux Chat https://t.me/linux4u
 
-###############################
+##############################################################
 # ArchLinux Fast Install v1.0.2
-###############################
+##############################################################
 
 # Описание
 Этот скрипт не задумывался, как обычный установочный с большим выбором DE, разметкой диска и т.д.
@@ -103,6 +105,7 @@ Cостоит из 3 частей.
 
 # Контакты
 Наша группа по Arch Linux https://vk.com/arch4u
+
 Linux Chat https://t.me/linux4u
 
 # История изменений
