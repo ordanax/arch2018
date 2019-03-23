@@ -23,14 +23,6 @@ elif [[ $prog_set == 0 ]]; then
   echo 'Установка программ пропущена.'
 fi
 
-echo 'Установить conky?'
-read -p "1 - Да, 0 - Нет: " conky_set
-if [[ $conky_set == 1 ]]; then
-  sudo pacman -S conky conky-manager --noconfirm 
-elif [[ $conky_set == 0 ]]; then
-  echo 'Установка conky пропущена.'
-fi
-
 echo 'Качаем и устанавливаем настройки Xfce'
 pacman -S wget --noconfirm
 # Чтобы сделать копию ваших настоек XFCE перейдите в домашнюю директорию ~/username открйте в этой категории терминал и выполните команду ниже.
@@ -40,6 +32,16 @@ wget git.io/xfce4.tar.gz
 sudo rm -rf ~/.config/xfce4/panel/
 sudo rm -rf ~/.config/xfce4/*
 sudo tar -xzf xfce4.tar.gz -C ~/
+
+echo 'Установить conky?'
+read -p "1 - Да, 0 - Нет: " conky_set
+if [[ $conky_set == 1 ]]; then
+  sudo pacman -S conky conky-manager --noconfirm
+  wget git.io/conky.tar.gz
+  sudo tar -xzf conky.tar.gz -C ~/
+elif [[ $conky_set == 0 ]]; then
+  echo 'Установка conky пропущена.'
+fi
 
 echo 'Установка тем'
 yay -S osx-arc-shadow papirus-maia-icon-theme-git breeze-default-cursor-theme --noconfirm
