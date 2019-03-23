@@ -110,8 +110,11 @@ Cостоит из 3 частей.
 
 # В разработке принимали участие:
 Алексей Бойко https://vk.com/ordanax
+
 Степан Скрябин https://vk.com/zurg3
+
 Михаил Сарвилин https://vk.com/michael170707
+
 Данил Антошкин https://vk.com/danil.antoshkin
 
 # Контакты
