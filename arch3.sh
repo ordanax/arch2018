@@ -18,7 +18,7 @@ echo 'Установить рекомендумые программы?'
 read -p "1 - Да, 0 - Нет: " prog_set
 if [[ $prog_set == 1 ]]; then
   sudo pacman -S obs-studio veracrypt freemind filezilla cherrytree gimp libreoffice libreoffice-fresh-ru kdenlive audacity screenfetch vlc qbittorrent gnome-calculator --noconfirm
-  yay -S dropbox flameshot-git obs-linuxbrowser xflux sublime-text-dev hunspell-ru pamac-aur --noconfirm 
+  yay -S dropbox flameshot-git xflux sublime-text-dev hunspell-ru pamac-aur --noconfirm 
 elif [[ $prog_set == 0 ]]; then
   echo 'Установка программ пропущена.'
 fi
