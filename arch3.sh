@@ -23,6 +23,14 @@ elif [[ $prog_set == 0 ]]; then
   echo 'Установка программ пропущена.'
 fi
 
+echo 'Установить conky?'
+read -p "1 - Да, 0 - Нет: " conky_set
+if [[ $conky_set == 1 ]]; then
+  sudo pacman -S conky conky-manager --noconfirm 
+elif [[ $conky_set == 0 ]]; then
+  echo 'Установка conky пропущена.'
+fi
+
 echo 'Качаем и устанавливаем настройки Xfce'
 pacman -S wget --noconfirm
 # Чтобы сделать копию ваших настоек XFCE перейдите в домашнюю директорию ~/username открйте в этой категории терминал и выполните команду ниже.
