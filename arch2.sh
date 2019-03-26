@@ -62,14 +62,32 @@ fi
 echo 'Ставим иксы и драйвера'
 pacman -S $gui_install
 
-echo 'Ставим Xfce, LXDM и сеть'
-pacman -S xfce4 xfce4-goodies lxdm networkmanager network-manager-applet ppp --noconfirm
+echo "Какое DE ставим?"
+read -p "1 - XFCE, 2 - KDE: " vm_setting
+if [[ $vm_setting == 1 ]]; then
+  pacman -S xfce4 xfce4-goodies --noconfirm
+elif [[ $vm_setting == 2 ]]; then
+  pacman -Sy linux-headers plasma-meta kdebase --noconfirm
+fi
+
+echo 'Какой ставим DM'
+read -p "1 - sddm, 2 - lxdm: " vm_setting
+if [[ $vm_setting == 1 ]]; then
+  pacman -Sy sddm sddm-kcm --noconfirm
+  systemctl enable sddm.service -f
+elif [[ $vm_setting == 2 ]]; then
+  pacman -S lxdm --noconfirm
+  systemctl enable lxdm
+fi
 
 echo 'Ставим шрифты'
 pacman -S ttf-liberation ttf-dejavu --noconfirm 
 
+echo 'Ставим сеть'
+pacman -S networkmanager network-manager-applet ppp --noconfirm
+
 echo 'Подключаем автозагрузку менеджера входа и интернет'
-systemctl enable lxdm NetworkManager
+systemctl enable NetworkManager
 
 echo 'Установка завершена! Перезагрузите систему.'
 echo 'Если хотите подключить AUR, установить мои конфиги XFCE, тогда после перезагрзки и входа в систему, установите wget (sudo pacman -S wget) и выполните команду:'
