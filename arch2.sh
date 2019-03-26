@@ -79,7 +79,7 @@ elif [[ $dm_setting == 2 ]]; then
   pacman -S lxdm --noconfirm
   systemctl enable lxdm
 elif [[ $dm_setting == 3 ]]; then
-  sudo pacman -S slim
+  sudo pacman -S slim --noconfirm
   sudo systemctl enable slim.service
   sudo systemctl start slim.service
 fi
