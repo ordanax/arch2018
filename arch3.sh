@@ -23,15 +23,22 @@ elif [[ $prog_set == 0 ]]; then
   echo 'Установка программ пропущена.'
 fi
 
-echo 'Качаем и устанавливаем настройки Xfce'
-pacman -S wget --noconfirm
-# Чтобы сделать копию ваших настоек XFCE перейдите в домашнюю директорию ~/username открйте в этой категории терминал и выполните команду ниже.
-# tar -czf xfce4.tar.gz .config/xfce4
-# Выгрузите архив в интернет и скорректируйте ссылку на XFCE файл заменив ссылку на свою.
-wget git.io/xfce4.tar.gz
-sudo rm -rf ~/.config/xfce4/panel/
-sudo rm -rf ~/.config/xfce4/*
-sudo tar -xzf xfce4.tar.gz -C ~/
+echo 'Скачать и установить конфиг для XFCE?'
+read -p "1 - Да, 0 - Нет: " xfce_set
+if [[ $xfce_set == 1 ]]; then
+  echo 'Качаем и устанавливаем настройки Xfce'
+  pacman -S wget --noconfirm
+  # Чтобы сделать копию ваших настоек XFCE перейдите в домашнюю директорию ~/username открйте в этой категории терминал и выполните команду ниже.
+  # tar -czf xfce4.tar.gz .config/xfce4
+  # Выгрузите архив в интернет и скорректируйте ссылку на XFCE файл заменив ссылку на свою.
+  wget git.io/xfce4.tar.gz
+  sudo rm -rf ~/.config/xfce4/panel/
+  sudo rm -rf ~/.config/xfce4/*
+  sudo tar -xzf xfce4.tar.gz -C ~/
+elif [[ $xfce_set == 0 ]]; then
+  echo 'Скачивание и установка конфига XFCE пропущена.'
+fi
+
 
 # echo 'Установить conky?'
 # read -p "1 - Да, 0 - Нет: " conky_set
