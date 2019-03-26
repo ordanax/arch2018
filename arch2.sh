@@ -71,11 +71,11 @@ elif [[ $vm_setting == 2 ]]; then
 fi
 
 echo 'Какой ставим DM'
-read -p "1 - sddm, 2 - lxdm: " vm_setting
-if [[ $vm_setting == 1 ]]; then
+read -p "1 - sddm, 2 - lxdm: " dm_setting
+if [[ $dm_setting == 1 ]]; then
   pacman -Sy sddm sddm-kcm --noconfirm
   systemctl enable sddm.service -f
-elif [[ $vm_setting == 2 ]]; then
+elif [[ $dm_setting == 2 ]]; then
   pacman -S lxdm --noconfirm
   systemctl enable lxdm
 fi
