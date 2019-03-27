@@ -80,14 +80,6 @@ elif [[ $dm_setting == 2 ]]; then
   systemctl enable lxdm
 fi
 
-echo 'Убрать меню граб для выбора системы ?'
-read -p "1 - Да, 2 - Нет: " grub_setting
-if [[ $grub_setting == 1 ]]; then
-sed 's/GRUB_TIMEOUT=5/GRUB_TIMEOUT=0' /etc/default/grub
-elif [[ $grub_setting == 2 ]]; then
-echo 'Оставляем как есть.'
-fi
-
 echo 'Ставим шрифты'
 pacman -S ttf-liberation ttf-dejavu --noconfirm 
 
