@@ -1,6 +1,8 @@
 #!/bin/bash
+rm -rf ~/.config/xfce4/*
 mkdir ~/Downloads
 cd ~/Downloads
+
 echo 'Установка AUR (yay)'
 sudo pacman -Syu
 sudo pacman -S wget --noconfirm
@@ -60,15 +62,15 @@ elif [[ $grub_set == 0 ]]; then
   echo 'Пропускаем.'
 fi
 
-echo 'Установить conky?'
-read -p "1 - Да, 0 - Нет: " conky_set
-if [[ $conky_set == 1 ]]; then
-  sudo pacman -S conky conky-manager --noconfirm
-  wget git.io/conky.tar.gz
-  sudo tar -xzf conky.tar.gz -C ~/
-elif [[ $conky_set == 0 ]]; then
-  echo 'Установка conky пропущена.'
-fi
+# echo 'Установить conky?'
+# read -p "1 - Да, 0 - Нет: " conky_set
+# if [[ $conky_set == 1 ]]; then
+#   sudo pacman -S conky conky-manager --noconfirm
+#   wget git.io/conky.tar.gz
+#   sudo tar -xzf conky.tar.gz -C ~/
+# elif [[ $conky_set == 0 ]]; then
+# echo 'Установка conky пропущена.'
+# fi
 
 echo 'Включаем сетевой экран'
 sudo ufw enable
