@@ -23,7 +23,7 @@ elif [[ $prog_set == 0 ]]; then
   echo 'Установка программ пропущена.'
 fi
 
-echo 'Скачать и установить конфиг для XFCE?'
+echo 'Скачать и установить конфиг и темы для XFCE?'
 read -p "1 - Да, 0 - Нет: " xfce_set
 if [[ $xfce_set == 1 ]]; then
   echo 'Качаем и устанавливаем настройки Xfce'
@@ -34,6 +34,19 @@ if [[ $xfce_set == 1 ]]; then
   sudo rm -rf ~/.config/xfce4/panel/
   sudo rm -rf ~/.config/xfce4/*
   sudo tar -xzf xfce4.tar.gz -C ~/
+ 
+  echo 'Установка тем'
+  yay -S osx-arc-shadow papirus-maia-icon-theme-git breeze-default-cursor-theme --noconfirm
+  sudo pacman -S capitaine-cursors
+  
+  echo 'Ставим лого ArchLinux в меню'
+  wget git.io/arch_logo.png
+  sudo mv -f ~/Downloads/arch_logo.png /usr/share/pixmaps/arch_logo.png
+
+  echo 'Ставим обои на рабочий стол'
+  wget git.io/bg.jpg
+  sudo rm -rf /usr/share/backgrounds/xfce/* #Удаляем стандартрые обои
+  sudo mv -f ~/Downloads/bg.jpg /usr/share/backgrounds/xfce/bg.jpg
 elif [[ $xfce_set == 0 ]]; then
   echo 'Скачивание и установка конфига XFCE пропущена.'
 fi
@@ -43,38 +56,20 @@ read -p "1 - Да, 2 - Нет: " grub_set
 if [[ $grub_set == 1 ]]; then
   wget git.io/grub.tar.gz
   sudo tar -xzf grub.tar.gz -C /
+  sudo grub-mkconfig -o /boot/grub/grub.cfg
 elif [[ $grub_set == 2 ]]; then
   echo 'Пропускаем.'
 fi
 
-# echo 'Установить conky?'
-# read -p "1 - Да, 0 - Нет: " conky_set
-# if [[ $conky_set == 1 ]]; then
-#   sudo pacman -S conky conky-manager --noconfirm
-#   get git.io/conky.tar.gz
-#   sudo tar -xzf conky.tar.gz -C ~/
-# elif [[ $conky_set == 0 ]]; then
-#   echo 'Установка conky пропущена.'
-# fi
-
-echo 'Ставим темы значков и курсора?'
-read -p "1 - Да, 2 - Нет: " theme_set
-if [[ $theme_set == 1 ]]; then
-  echo 'Установка тем'
-  yay -S osx-arc-shadow papirus-maia-icon-theme-git breeze-default-cursor-theme --noconfirm
-  sudo pacman -S capitaine-cursors
-elif [[ $theme_set == 2 ]]; then
-  echo 'Пропускаем.'
+echo 'Установить conky?'
+read -p "1 - Да, 0 - Нет: " conky_set
+if [[ $conky_set == 1 ]]; then
+  sudo pacman -S conky conky-manager --noconfirm
+  get git.io/conky.tar.gz
+  sudo tar -xzf conky.tar.gz -C /
+elif [[ $conky_set == 0 ]]; then
+  echo 'Установка conky пропущена.'
 fi
-
-echo 'Ставим лого ArchLinux в меню'
-wget git.io/arch_logo.png
-sudo mv -f ~/Downloads/arch_logo.png /usr/share/pixmaps/arch_logo.png
-
-echo 'Ставим обои на рабочий стол'
-wget git.io/bg.jpg
-sudo rm -rf /usr/share/backgrounds/xfce/* #Удаляем стандартрые обои
-sudo mv -f ~/Downloads/bg.jpg /usr/share/backgrounds/xfce/bg.jpg
 
 echo 'Включаем сетевой экран'
 sudo ufw enable
