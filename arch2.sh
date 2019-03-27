@@ -67,7 +67,7 @@ read -p "1 - XFCE, 2 - KDE: " vm_setting
 if [[ $vm_setting == 1 ]]; then
   pacman -S xfce4 xfce4-goodies --noconfirm
 elif [[ $vm_setting == 2 ]]; then
-  pacman -Sy linux-headers plasma-meta kdebase --noconfirm
+  pacman -Sy plasma-meta kdebase --noconfirm
 fi
 
 echo 'Какой ставим DM ?'
