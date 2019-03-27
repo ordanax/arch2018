@@ -70,7 +70,7 @@ elif [[ $vm_setting == 2 ]]; then
   pacman -Sy linux-headers plasma-meta kdebase --noconfirm
 fi
 
-echo 'Какой ставим DM'
+echo 'Какой ставим DM ?'
 read -p "1 - sddm, 2 - lxdm: " dm_setting
 if [[ $dm_setting == 1 ]]; then
   pacman -Sy sddm sddm-kcm --noconfirm
@@ -78,6 +78,14 @@ if [[ $dm_setting == 1 ]]; then
 elif [[ $dm_setting == 2 ]]; then
   pacman -S lxdm --noconfirm
   systemctl enable lxdm
+fi
+
+echo 'Убрать меню граб для выбора системы ?'
+read -p "1 - Да, 2 - Нет: " grub_setting
+if [[ $grub_setting == 1 ]]; then
+sed 's/GRUB_TIMEOUT=5/GRUB_TIMEOUT=0' /etc/default/grub
+elif [[ $grub_setting == 2 ]]; then
+echo 'Оставляем как есть.'
 fi
 
 echo 'Ставим шрифты'
