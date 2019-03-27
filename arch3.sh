@@ -42,7 +42,7 @@ echo 'Убираем меню граб для выбора системы?'
 read -p "1 - Да, 2 - Нет: " grub_set
 if [[ $grub_set == 1 ]]; then
   wget git.io/grub.tar.gz
-  sudo tar -xzf grub.tar.gz -C ~/
+  sudo tar -xzf grub.tar.gz -C /
 elif [[ $grub_set == 2 ]]; then
   echo 'Пропускаем.'
 fi
@@ -57,9 +57,15 @@ fi
 #   echo 'Установка conky пропущена.'
 # fi
 
-echo 'Установка тем'
-yay -S osx-arc-shadow papirus-maia-icon-theme-git breeze-default-cursor-theme --noconfirm
-sudo pacman -S capitaine-cursors
+echo 'Ставим темы значков и курсора?'
+read -p "1 - Да, 2 - Нет: " theme_set
+if [[ $theme_set == 1 ]]; then
+  echo 'Установка тем'
+  yay -S osx-arc-shadow papirus-maia-icon-theme-git breeze-default-cursor-theme --noconfirm
+  sudo pacman -S capitaine-cursors
+elif [[ $theme_set == 2 ]]; then
+  echo 'Пропускаем.'
+fi
 
 echo 'Ставим лого ArchLinux в меню'
 wget git.io/arch_logo.png
