@@ -117,6 +117,8 @@ Cостоит из 3 частей.
 
 Данил Антошкин https://vk.com/danil.antoshkin
 
+Юрий Порунцов https://vk.com/poruncov
+
 # Контакты
 Наша группа по Arch Linux https://vk.com/arch4u
 
