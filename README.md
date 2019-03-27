@@ -126,6 +126,7 @@ Linux Chat https://t.me/linux4u
 ### 27.03.2019 ArchLinux Fast Install v1.3
 - Добавлен выбор DE - Xfce и KDE
 - Добавлен выбор DM - SDDM и LXDE
+- Добавлен выбор загрузки системы без паузы в Grub
 
 ### 23.03.2019 ArchLinux Fast Install v1.2
 - Добавлен выбор установки рекомендуемых программ
