@@ -27,7 +27,6 @@ echo 'Скачать и установить конфиг для XFCE?'
 read -p "1 - Да, 0 - Нет: " xfce_set
 if [[ $xfce_set == 1 ]]; then
   echo 'Качаем и устанавливаем настройки Xfce'
-  pacman -S wget --noconfirm
   # Чтобы сделать копию ваших настоек XFCE перейдите в домашнюю директорию ~/username открйте в этой категории терминал и выполните команду ниже.
   # tar -czf xfce4.tar.gz .config/xfce4
   # Выгрузите архив в интернет и скорректируйте ссылку на XFCE файл заменив ссылку на свою.
@@ -39,6 +38,14 @@ elif [[ $xfce_set == 0 ]]; then
   echo 'Скачивание и установка конфига XFCE пропущена.'
 fi
 
+echo 'Убираем меню граб для выбора системы?'
+read -p "1 - Да, 2 - Нет: " grub_set
+if [[ $grub_set == 1 ]]; then
+  wget git.io/grub.tar.gz
+  sudo tar -xzf grub.tar.gz -C ~/
+elif [[ $grub_set == 2 ]]; then
+  echo 'Пропускаем.'
+fi
 
 # echo 'Установить conky?'
 # read -p "1 - Да, 0 - Нет: " conky_set
