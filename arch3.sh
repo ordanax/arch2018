@@ -65,7 +65,7 @@ echo 'Установить conky?'
 read -p "1 - Да, 0 - Нет: " conky_set
 if [[ $conky_set == 1 ]]; then
   sudo pacman -S conky conky-manager --noconfirm
-  get git.io/conky.tar.gz
+  wget git.io/conky.tar.gz
   sudo tar -xzf conky.tar.gz -C /
 elif [[ $conky_set == 0 ]]; then
   echo 'Установка conky пропущена.'
