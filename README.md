@@ -1,5 +1,5 @@
 ##############################################
-# ArchLinux Fast Install v1.3
+# ArchLinux Fast Install v1.4
 ##############################################
 
 This script install ArchLinux XFCE + AUR + XFCE config. Also you can add own /home directory as well as XFCE config.
@@ -60,7 +60,7 @@ Linux Chat https://t.me/linux4u
 
 
 ##############################################
-# ArchLinux Fast Install v1.3
+# ArchLinux Fast Install v1.4
 ##############################################
 
 # Описание
@@ -125,6 +125,9 @@ Cостоит из 3 частей.
 Linux Chat https://t.me/linux4u
 
 # История изменений
+### 28.03.2019 ArchLinux Fast Install v1.4
+- Добавлена усатановка conky
+
 ### 27.03.2019 ArchLinux Fast Install v1.3
 - Добавлен выбор DE - Xfce и KDE
 - Добавлен выбор DM - SDDM и LXDM
