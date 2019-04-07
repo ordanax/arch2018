@@ -82,7 +82,7 @@ elif [[ $dm_setting == 2 ]]; then
   systemctl enable lxdm
 elif [[ $dm_setting == 3 ]]; then
   pacman -S lightdm --noconfirm
-  systemctl enable lightdm.service
+  systemctl enable lightdm.service -f
 fi
 
 echo 'Ставим шрифты'
