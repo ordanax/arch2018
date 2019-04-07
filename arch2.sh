@@ -73,13 +73,16 @@ elif [[ $vm_setting == 3 ]]; then
 fi
 
 echo 'Какой ставим DM ?'
-read -p "1 - sddm, 2 - lxdm: " dm_setting
+read -p "1 - sddm (Для Openbox не ставить, нет выбора пользователя), 2 - lxdm, 3 - lightdm: " dm_setting
 if [[ $dm_setting == 1 ]]; then
   pacman -Sy sddm sddm-kcm --noconfirm
   systemctl enable sddm.service -f
 elif [[ $dm_setting == 2 ]]; then
   pacman -S lxdm --noconfirm
   systemctl enable lxdm
+elif [[ $dm_setting == 3 ]]; then
+  pacman -S lightdm --noconfirm
+  systemctl enable lightdm.service
 fi
 
 echo 'Ставим шрифты'
