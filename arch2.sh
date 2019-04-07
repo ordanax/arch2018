@@ -63,11 +63,13 @@ echo 'Ставим иксы и драйвера'
 pacman -S $gui_install
 
 echo "Какое DE ставим?"
-read -p "1 - XFCE, 2 - KDE: " vm_setting
+read -p "1 - XFCE, 2 - KDE, 3 - Openbox: " vm_setting
 if [[ $vm_setting == 1 ]]; then
   pacman -S xfce4 xfce4-goodies --noconfirm
 elif [[ $vm_setting == 2 ]]; then
   pacman -Sy plasma-meta kdebase --noconfirm
+elif [[ $vm_setting == 3 ]]; then  
+  pacman -S openbox obconf obmenu lxappearance
 fi
 
 echo 'Какой ставим DM ?'
