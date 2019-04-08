@@ -69,7 +69,7 @@ if [[ $vm_setting == 1 ]]; then
 elif [[ $vm_setting == 2 ]]; then
   pacman -Sy plasma-meta kdebase --noconfirm
 elif [[ $vm_setting == 3 ]]; then  
-  pacman -S  openbox obmenu lxappearance obconf xfce4-terminal nitrogen tint2 thunar mousepad wmctrl compton papirus-icon-theme
+  pacman -S  openbox xfce4-terminal
 fi
 
 echo 'Какой ставим DM ?'
