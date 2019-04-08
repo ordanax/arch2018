@@ -35,17 +35,6 @@ if [[ $xfce_set == 1 ]]; then
   sudo rm -rf ~/.config/xfce4/panel/
   sudo rm -rf ~/.config/xfce4/*
   sudo tar -xzf xfce4.tar.gz -C ~/
-  
-echo 'Скачать и установить конфиг и темы для Openbox?'
-read -p "1 - Да, 0 - Нет: " openbox_set
-if [[ $openbox_set == 1 ]]; then
-  echo 'Качаем и устанавливаем настройки Openbox'
-  wget git.io/openbox.tar.gz
-  sudo tar -xzf openbox.tar.gz -C ~/
-  wget git.io/tint2.tar.gz
-  sudo tar -xzf tint2.tar.gz -C ~/
-  
- 
   echo 'Установка тем'
   yay -S osx-arc-shadow papirus-maia-icon-theme-git breeze-default-cursor-theme --noconfirm
   sudo pacman -S capitaine-cursors
@@ -59,8 +48,22 @@ if [[ $openbox_set == 1 ]]; then
   sudo rm -rf /usr/share/backgrounds/xfce/* #Удаляем стандартрые обои
   sudo mv -f ~/Downloads/bg.jpg /usr/share/backgrounds/xfce/bg.jpg
 elif [[ $xfce_set == 0 ]]; then
-  echo 'Скачивание и установка конфига XFCE пропущена.'
-fi
+  echo 'Установка конфигов XFCE пропущена.'
+fi 
+  
+echo 'Скачать и установить конфиг и темы для Openbox?'
+read -p "1 - Да, 0 - Нет: " openbox_set
+if [[ $openbox_set == 1 ]]; then
+  echo 'Качаем и устанавливаем настройки Openbox'
+  wget git.io/openbox.tar.gz
+  sudo tar -xzf openbox.tar.gz -C ~/
+  wget git.io/tint2.tar.gz
+  sudo tar -xzf tint2.tar.gz -C ~/
+  yay -S openbox obconf obmenu-generator obkey-git lxappearance-obconf tint2 nitrogen xfce4-terminal thunar mousepad wmctrl compton papirus-icon-theme
+  sudo pacman -S capitaine-cursors
+elif [[ $openbox_set == 0 ]]; then
+  echo 'Установка конфигов Openbox пропущена.'
+fi  
 
 echo 'Убираем меню граб для выбора системы?'
 read -p "1 - Да, 0 - Нет: " grub_set
