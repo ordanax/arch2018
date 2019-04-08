@@ -40,8 +40,11 @@ echo 'Скачать и установить конфиг и темы для Ope
 read -p "1 - Да, 0 - Нет: " openbox_set
 if [[ $openbox_set == 1 ]]; then
   echo 'Качаем и устанавливаем настройки Openbox'
-  wget git.io/xfce4.tar.gz
+  wget git.io/openbox.tar.gz
   sudo tar -xzf openbox.tar.gz -C ~/
+  wget git.io/tint2.tar.gz
+  sudo tar -xzf tint2.tar.gz -C ~/
+  
  
   echo 'Установка тем'
   yay -S osx-arc-shadow papirus-maia-icon-theme-git breeze-default-cursor-theme --noconfirm
