@@ -59,7 +59,7 @@ if [[ $openbox_set == 1 ]]; then
   sudo tar -xzf openbox.tar.gz -C ~/
   wget git.io/tint2.tar.gz
   sudo tar -xzf tint2.tar.gz -C ~/
-  yay -S openbox obconf obmenu-generator obkey-git lxappearance-obconf tint2 nitrogen xfce4-terminal thunar mousepad wmctrl compton papirus-icon-theme
+  yay -S obconf obmenu-generator obkey-git lxappearance-obconf tint2 nitrogen thunar mousepad wmctrl compton papirus-icon-theme
   sudo pacman -S capitaine-cursors
 elif [[ $openbox_set == 0 ]]; then
   echo 'Установка конфигов Openbox пропущена.'
