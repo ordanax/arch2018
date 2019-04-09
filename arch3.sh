@@ -55,10 +55,12 @@ echo 'Скачать и установить конфиг и темы для Ope
 read -p "1 - Да, 0 - Нет: " openbox_set
 if [[ $openbox_set == 1 ]]; then
   echo 'Качаем и устанавливаем настройки Openbox'
-  wget git.io/openbox.tar.gz
-  sudo tar -xzf openbox.tar.gz -C ~/
-  wget git.io/tint2.tar.gz
-  sudo tar -xzf tint2.tar.gz -C ~/
+  #wget git.io/openbox.tar.gz
+  #sudo tar -xzf openbox.tar.gz -C ~/
+  #wget git.io/tint2.tar.gz
+  #sudo tar -xzf tint2.tar.gz -C ~/
+  wget https://github.com/ordanax/arch2018/raw/master/attach/config.tar.gz
+  sudo tar -xzf config.tar.gz -C ~/
   yay -S obconf obmenu-generator obkey-git lxappearance-obconf tint2 nitrogen thunar mousepad wmctrl compton papirus-icon-theme
   sudo pacman -S capitaine-cursors
 elif [[ $openbox_set == 0 ]]; then
