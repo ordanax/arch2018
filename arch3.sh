@@ -19,7 +19,7 @@ echo 'Установить рекомендумые программы?'
 read -p "1 - Да, 0 - Нет: " prog_set
 if [[ $prog_set == 1 ]]; then
   sudo pacman -S obs-studio veracrypt freemind filezilla cherrytree gimp libreoffice libreoffice-fresh-ru kdenlive audacity screenfetch vlc qbittorrent gnome-calculator --noconfirm
-  yay -S dropbox timeshift flameshot-git xflux sublime-text-dev hunspell-ru pamac-aur --noconfirm 
+  yay -S timeshift flameshot-git xflux sublime-text-dev hunspell-ru pamac-aur --noconfirm 
 elif [[ $prog_set == 0 ]]; then
   echo 'Установка программ пропущена.'
 fi
@@ -31,7 +31,8 @@ if [[ $xfce_set == 1 ]]; then
   # Чтобы сделать копию ваших настоек XFCE перейдите в домашнюю директорию ~/username открйте в этой категории терминал и выполните команду ниже.
   # tar -czf xfce4.tar.gz .config/xfce4
   # Выгрузите архив в интернет и скорректируйте ссылку на XFCE файл заменив ссылку на свою.
-  wget git.io/xfce4.tar.gz
+  # wget git.io/xfce4.tar.gz
+  wget https://github.com/ordanax/backup/blob/master/xfce4.tar.gz?raw=true
   sudo rm -rf ~/.config/xfce4/panel/
   sudo rm -rf ~/.config/xfce4/*
   sudo tar -xzf xfce4.tar.gz -C ~/
