@@ -19,7 +19,7 @@ echo 'Установить рекомендумые программы?'
 read -p "1 - Да, 0 - Нет: " prog_set
 if [[ $prog_set == 1 ]]; then
   sudo pacman -S obs-studio veracrypt vlc freemind filezilla cherrytree gimp libreoffice libreoffice-fresh-ru kdenlive audacity screenfetch vlc qbittorrent gnome-calculator --noconfirm
-  yay -S timeshift flameshot-git xflux sublime-text-dev hunspell-ru pamac-aur --noconfirm 
+  yay -S gxneur-devel-git timeshift flameshot-git xflux sublime-text-dev hunspell-ru pamac-aur --noconfirm 
   gpg --keyserver pgp.mit.edu --recv-keys FC918B335044912E
   yay -S dropbox --noconfirm
 elif [[ $prog_set == 0 ]]; then
