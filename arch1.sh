@@ -65,8 +65,8 @@ mount /dev/sda1 /mnt/boot
 swapon /dev/sda3
 mount /dev/sda4 /mnt/home
 
-echo '3.1 Выбор зеркал для загрузки. Ставим зеркало от Яндекс'
-echo "Server = http://mirror.archlinux32.org/$arch/$repo" > /etc/pacman.d/mirrorlist
+#echo '3.1 Выбор зеркал для загрузки. Ставим зеркало от Яндекс'
+#echo "Server = http://mirror.archlinux32.org/$arch/$repo" > /etc/pacman.d/mirrorlist
 
 echo '3.2 Установка основных пакетов'
 pacstrap /mnt base base-devel
