@@ -24,9 +24,6 @@ yay -S sublime-text-dev arc-gtk-theme polybar ls_extended ttf-roboto-mono openvp
 
 echo 'Создаем нужные директории.'
 mkdir ~/Downloads
-mkdir ~/Documents
-mkdir ~/Video/
-mkdir -p ~/Storages/usb_{a,b}
 
 echo 'Включаем сетевой экран'
 #sudo ufw enable
