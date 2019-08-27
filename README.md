@@ -52,8 +52,6 @@ See notes in the script itself.
 # Contacts
 Our Arch Linux Team https://vk.com/arch4u
 
-Linux Chat https://t.me/linux4u
-
 
 
 
@@ -122,7 +120,6 @@ Cостоит из 3 частей.
 # Контакты
 Наша группа по Arch Linux https://vk.com/arch4u
 
-Linux Chat https://t.me/linux4u
 
 # История изменений
 ### 8.04.2019 ArchLinux Fast Install v1.5
