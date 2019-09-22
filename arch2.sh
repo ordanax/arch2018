@@ -72,15 +72,9 @@ elif [[ $vm_setting == 3 ]]; then
   pacman -S  openbox xfce4-terminal
 fi
 
-echo 'Какой ставим DM ?'
-read -p "1 - sddm (Для Openbox не ставить, нет выбора пользователя), 2 - lxdm: " dm_setting
-if [[ $dm_setting == 1 ]]; then
-  pacman -Sy sddm sddm-kcm --noconfirm
-  systemctl enable sddm.service -f
-elif [[ $dm_setting == 2 ]]; then
-  pacman -S lxdm --noconfirm
-  systemctl enable lxdm
-fi
+echo 'Cтавим DM'
+pacman -S lxdm --noconfirm
+systemctl enable lxdm
 
 echo 'Ставим шрифты'
 pacman -S ttf-liberation ttf-dejavu --noconfirm 
