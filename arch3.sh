@@ -1,7 +1,7 @@
 #!/bin/bash
 rm -rf ~/.config/xfce4/*
-mkdir ~/Downloads
-cd ~/Downloads
+mkdir ~/downloads
+cd ~/downloads
 
 echo 'Установка AUR (yay)'
 sudo pacman -Syu
@@ -44,12 +44,12 @@ if [[ $xfce_set == 1 ]]; then
   
   echo 'Ставим лого ArchLinux в меню'
   wget git.io/arch_logo.png
-  sudo mv -f ~/Downloads/arch_logo.png /usr/share/pixmaps/arch_logo.png
+  sudo mv -f ~/downloads/arch_logo.png /usr/share/pixmaps/arch_logo.png
 
   echo 'Ставим обои на рабочий стол'
   wget git.io/bg.jpg
   sudo rm -rf /usr/share/backgrounds/xfce/* #Удаляем стандартрые обои
-  sudo mv -f ~/Downloads/bg.jpg /usr/share/backgrounds/xfce/bg.jpg
+  sudo mv -f ~/downloads/bg.jpg /usr/share/backgrounds/xfce/bg.jpg
 elif [[ $xfce_set == 0 ]]; then
   echo 'Установка конфигов XFCE пропущена.'
 fi 
@@ -96,7 +96,7 @@ sudo ufw enable
 echo 'Добавляем в автозагрузку:'
 sudo systemctl enable ufw
 
-sudo rm -rf ~/Downloads
+sudo rm -rf ~/downloads
 sudo rm -rf ~/arch3.sh
 
 echo 'Установка завершена!'
