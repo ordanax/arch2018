@@ -2,7 +2,7 @@
 # ArchLinux Fast Install v1.6
 ##############################################
 
-This script install ArchLinux XFCE + AUR + XFCE config. Also you can add own /home directory as well as XFCE config.
+This script install ArchLinux XFCE + AUR + XFCE config. (BMR ONLY!!!) Also you can add own /home directory as well as XFCE config.
 
 # Description
 This script was not thought of as a normal installation with a large selection of DE, disk partitioning, etc.
