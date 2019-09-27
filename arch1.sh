@@ -21,7 +21,7 @@ timedatectl set-ntp true
 echo "Что ставим Legacy/UEFI?"
 echo "Legacy =0 UEFI=1"
 while 
-    read -n1 -p  " # если убрать -n1 тогда необходимо будет начать enter
+    read -n1 -p  "
     0 - Legacy
     
     1 - UEFI: " vm_setting 
@@ -96,7 +96,7 @@ echo '2.4 создание разделов'
   echo;
   echo;
   echo;
-  echo +30G;
+  echo +20G;
 
   echo n;
   echo p;
@@ -111,14 +111,16 @@ echo '2.4 создание разделов'
 echo 'Ваша разметка диска'
 fdisk -l
 
-echo '2.4.2 Форматирование  и монтирование дисков'
-mkfs.ext4 /dev/sda2
-mount /dev/sda2 /mnt
-mkfs.fat -F32 /dev/sda1 
+echo '2.4.2 Форматирование дисков'
+mkfs.fat -F32 /dev/sda1 -L boot
+mkfs.ext4 /dev/sda2 -L root
 mkdir -p /mnt/boot/efi
-mount /dev/sda1 /mnt/boot/efi
-mkfs.ext4 /dev/sda3
+mkfs.ext4 /dev/sda3 -L home
 mkdir -p /mnt/home
+
+echo '2.4.3 Монтирование дисков'
+mount /dev/sda2 /mnt
+mount /dev/sda1 /mnt/boot/efi
 mount /dev/sda3 /mnt/home
 
 fi
