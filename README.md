@@ -71,7 +71,7 @@ Cостоит из 3 частей.
 - Добавлен выбор DE OpenBox
 
 ### 28.03.2019 ArchLinux Fast Install v1.4
-- Добавлена усатановка conky
+- Добавлена устатановка conky
 
 ### 27.03.2019 ArchLinux Fast Install v1.3
 - Добавлен выбор DE - Xfce и KDE
