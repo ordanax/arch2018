@@ -89,20 +89,19 @@ echo '2.4 создание разделов'
   echo;
   echo;
   echo;
+  echo +20G;
+
+  echo n;
+  echo;
+  echo;
+  echo;
   echo +500M;
 
   echo n;
   echo;
   echo;
   echo;
-  echo +20G;
-
-  echo n;
-  echo p;
   echo;
-  echo;
-  echo a;
-  echo 1;
 
   echo w;
 ) | fdisk /dev/sda
@@ -111,17 +110,21 @@ echo 'Ваша разметка диска'
 fdisk -l
 
 echo '2.4.2 Форматирование дисков'
-mkfs.fat -F32 /dev/sda1 -L boot
-mkfs.ext4 /dev/sda2 -L root
-mkfs.ext4 /dev/sda3 -L home
 
-echo '2.4.3 Монтирование дисков'
+#root
+mkfs.ext4 /dev/sda1 -L root
+mount /dev/sda1 /mnt
+
+#boot
+mkfs.fat -F32 /dev/sda2 -L boot
 mkdir -p /mnt/boot/efi
-mkdir -p /mnt/home
-
-mount /dev/sda2 /mnt
 mount /dev/sda1 /mnt/boot/efi
+
+#home
+mkfs.ext4 /dev/sda3 -L home
+mkdir -p /mnt/home
 mount /dev/sda3 /mnt/home
+
 
 fi
 
