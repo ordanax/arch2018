@@ -84,8 +84,7 @@ elif [[ $vm_setting  == 1 ]]; then
 $grub = grub efibootmgr
 echo '2.4 создание разделов'
 (
-  echo o;
-
+  echo g;
   echo n;
   echo;
   echo;
@@ -114,11 +113,12 @@ fdisk -l
 echo '2.4.2 Форматирование дисков'
 mkfs.fat -F32 /dev/sda1 -L boot
 mkfs.ext4 /dev/sda2 -L root
-mkdir -p /mnt/boot/efi
 mkfs.ext4 /dev/sda3 -L home
-mkdir -p /mnt/home
 
 echo '2.4.3 Монтирование дисков'
+mkdir -p /mnt/boot/efi
+mkdir -p /mnt/home
+
 mount /dev/sda2 /mnt
 mount /dev/sda1 /mnt/boot/efi
 mount /dev/sda3 /mnt/home
