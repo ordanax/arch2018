@@ -90,7 +90,10 @@ echo '2.4 создание разделов'
   echo 1;
   echo;
   echo +20G;
-
+  echo t;
+  echo 1;
+  echo 1;
+  
   echo n;
   echo 2;
   echo;
