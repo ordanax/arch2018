@@ -128,6 +128,8 @@ mount /dev/sda3 /mnt/home
 
 fi
 
+sleep 20
+
 echo '3.1 Выбор зеркал для загрузки. Ставим зеркало от Яндекс'
 echo "Server = http://mirror.yandex.ru/archlinux/\$repo/os/\$arch" > /etc/pacman.d/mirrorlist
 
