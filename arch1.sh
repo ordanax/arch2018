@@ -19,7 +19,7 @@ echo '2.3 Синхронизация системных часов'
 timedatectl set-ntp true
 
 echo "Что ставим Legacy/UEFI?"
-echo "Legacy =0 UEFI=1"
+echo "Legacy =0 UEFI=1 (в разработке)"
 while 
     read -n1 -p  "
     0 - Legacy
