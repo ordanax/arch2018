@@ -18,6 +18,21 @@ echo 'Ссылка на чек лист есть в группе vk.com/arch4u'
 echo '2.3 Синхронизация системных часов'
 timedatectl set-ntp true
 
+lsblk
+echo 'На какой раздел делаем установку?'
+read -p "1 - sda, 2 - sdb, 3 - sdc: " dev_set
+if [[ $dev_set == 1 ]]; then
+  dev="sda"
+if [[ $dev_set == 2 ]]; then
+  dev="sdb"
+if [[ $dev_set == 3 ]]; then
+  dev="sdc"
+elif [[ $dev_set == 0 ]]; then
+  echo 'Вы не выбрали диск разметки'
+  exit;
+fi
+
+
 echo "Что ставим Legacy/UEFI?"
 echo "Legacy =0 UEFI=1"
 while 
@@ -62,23 +77,23 @@ echo '2.4 создание разделов'
   echo 1;
 
   echo w;
-) | fdisk /dev/sda
+) | fdisk /dev/$dev
 
 echo 'Ваша разметка диска'
 fdisk -l
 
 echo '2.4.2 Форматирование дисков'
-mkfs.ext2  /dev/sda1 -L boot
-mkfs.ext4  /dev/sda2 -L root
-mkswap /dev/sda3 -L swap
-mkfs.ext4  /dev/sda4 -L home
+mkfs.ext2  /dev/$dev"1" -L boot
+mkfs.ext4  /dev/$dev"2" -L root
+mkswap /dev/$dev"3" -L swap
+mkfs.ext4  /dev/$dev"4" -L home
 
 echo '2.4.3 Монтирование дисков'
-mount /dev/sda2 /mnt
+mount /dev/$dev"2" /mnt
 mkdir /mnt/{boot,home}
-mount /dev/sda1 /mnt/boot
-swapon /dev/sda3
-mount /dev/sda4 /mnt/home
+mount /dev/$dev"1" /mnt/boot
+swapon /dev/$dev"3"
+mount /dev/$dev"4" /mnt/home
 
 elif [[ $vm_setting  == 1 ]]; then
 grub="grub efibootmgr"
@@ -105,7 +120,7 @@ echo '2.4 создание разделов'
   echo;
 
   echo w;
-) | fdisk /dev/sda
+) | fdisk /dev/$dev
 
 echo 'Ваша разметка диска'
 fdisk -l
@@ -113,18 +128,18 @@ fdisk -l
 echo '2.4.2 Форматирование дисков'
 
 #root
-mkfs.ext4 /dev/sda1
-mount /dev/sda1 /mnt
+mkfs.ext4 /dev/$dev"1"
+mount /dev/$dev"1" /mnt
 
 #boot
-mkfs.fat -F32 /dev/sda2
+mkfs.fat -F32 /dev/$dev"2"
 mkdir -p /mnt/boot/efi
-mount /dev/sda2 /mnt/boot/efi
+mount /dev/$dev"2" /mnt/boot/efi
 
 #home
-mkfs.ext4 /dev/sda3
+mkfs.ext4 /dev/$dev"3"
 mkdir -p /mnt/home
-mount /dev/sda3 /mnt/home
+mount /dev/$dev"3" /mnt/home
 
 fi
 
