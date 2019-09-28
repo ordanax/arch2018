@@ -90,15 +90,15 @@ echo '2.4 создание разделов'
   echo 1;
   echo;
   echo +20G;
-  echo t;
-  echo 1;
-  echo 1;
-  
+
   echo n;
   echo 2;
   echo;
   echo +500M;
-
+  echo t;
+  echo 1;
+  echo 1;
+  
   echo n;
   echo 3;
   echo;
@@ -119,13 +119,12 @@ mount /dev/sda1 /mnt
 #boot
 mkfs.fat -F32 /dev/sda2 -L boot
 mkdir -p /mnt/boot/efi
-mount /dev/sda1 /mnt/boot/efi
+mount /dev/sda2 /mnt/boot/efi
 
 #home
 mkfs.ext4 /dev/sda3 -L home
 mkdir -p /mnt/home
 mount /dev/sda3 /mnt/home
-
 
 fi
 
