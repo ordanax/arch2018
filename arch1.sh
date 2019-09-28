@@ -29,7 +29,6 @@ if [[ $dev_set == 3 ]]; then
   dev="sdc"
 elif [[ $dev_set == 0 ]]; then
   echo 'Вы не выбрали диск разметки'
-  exit;
 fi
 
 
