@@ -112,14 +112,14 @@ fdisk -l
 
 echo '2.4.2 Форматирование дисков'
 
-#root
-mkfs.ext4 /dev/sda1
-mount /dev/sda1 /mnt
-
 #boot
-mkfs.fat -F32 /dev/sda2
+mkfs.ext4 /dev/sda2
+mount /dev/sda2 /mnt
+
+#root
+mkfs.fat -F32 /dev/sda1 
 mkdir -p /mnt/boot/efi
-mount /dev/sda2 /mnt/boot/efi
+mount /dev/sda1 /mnt/boot/efi
 
 #home
 mkfs.ext4 /dev/sda3
