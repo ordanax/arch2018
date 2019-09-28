@@ -39,13 +39,13 @@ while
     read -n1 -p  "
     0 - Legacy
     
-    1 - UEFI: " vm_setting 
+    1 - UEFI: " uefi_setting 
     echo ''
-    [[ "$vm_setting" =~ [^10] ]] #только 1 или 0, ^0-9  цифры от 0 до 9
+    [[ "$uefi_setting" =~ [^10] ]] #только 1 или 0, ^0-9  цифры от 0 до 9
 do
     :
 done
-if [[ $vm_setting  == 0 ]]; then
+if [[ $uefi_setting  == 0 ]]; then
 grub="grub"
 echo '2.4 создание разделов'
 (
@@ -95,7 +95,7 @@ mount /dev/$dev"1" /mnt/boot
 swapon /dev/$dev"3"
 mount /dev/$dev"4" /mnt/home
 
-elif [[ $vm_setting  == 1 ]]; then
+elif [[ $uefi_setting  == 1 ]]; then
 grub="grub efibootmgr"
 
 echo '2.4 создание разделов'
