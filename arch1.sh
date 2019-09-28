@@ -31,7 +31,7 @@ do
     :
 done
 if [[ $vm_setting  == 0 ]]; then
-$grub = grub
+grub="grub"
 echo '2.4 создание разделов'
 (
   echo o;
@@ -81,7 +81,8 @@ swapon /dev/sda3
 mount /dev/sda4 /mnt/home
 
 elif [[ $vm_setting  == 1 ]]; then
-$grub = grub efibootmgr
+grub="grub efibootmgr"
+
 echo '2.4 создание разделов'
 (
   echo g;
