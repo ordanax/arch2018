@@ -85,6 +85,8 @@ grub="grub efibootmgr"
 
 echo '2.4 создание разделов'
 (
+  echo g;
+
   echo n;
   echo 2;
   echo;
@@ -94,7 +96,6 @@ echo '2.4 создание разделов'
   echo 1;
   sleep 10
   
-  echo g;
   echo n;
   echo 1;
   echo;
