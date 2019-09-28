@@ -88,16 +88,15 @@ echo '2.4 создание разделов'
   echo g;
 
   echo n;
-  echo 2;
+  echo 1;
   echo;
   echo +500M;
   echo t;
   echo 1;
   echo 1;
-  sleep 10
-  
-  echo n;
-  echo 1;
+
+echo n;
+  echo 2;
   echo;
   echo +20G;
   sleep 10
