@@ -100,20 +100,17 @@ echo '2.4 создание разделов'
   echo;
   echo +20G;
   echo y;
-  sleep 10
   
   echo n;
   echo 3;
   echo;
   echo;
-  sleep 10
   
   echo w;
 ) | fdisk /dev/sda
 
 echo 'Ваша разметка диска'
 fdisk -l
-sleep 10
 
 echo '2.4.2 Форматирование дисков'
 mkfs.fat -F32 /dev/sda1 
