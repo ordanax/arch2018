@@ -81,7 +81,7 @@ swapon /dev/sda3
 mount /dev/sda4 /mnt/home
 
 elif [[ $vm_setting  == 1 ]]; then
-grub="grub efibootmgr"
+grub="grub efibootmgr dosfstools os-prober"
 
 echo '2.4 создание разделов'
 (
