@@ -18,20 +18,6 @@ echo 'Ссылка на чек лист есть в группе vk.com/arch4u'
 echo '2.3 Синхронизация системных часов'
 timedatectl set-ntp true
 
-echo "Что ставим Legacy/UEFI?"
-echo "Legacy =0 UEFI=1 (в разработке)"
-while 
-    read -n1 -p  "
-    0 - Legacy
-    
-    1 - UEFI: " vm_setting 
-    echo ''
-    [[ "$vm_setting" =~ [^10] ]] #только 1 или 0, ^0-9  цифры от 0 до 9
-do
-    :
-done
-if [[ $vm_setting  == 0 ]]; then
-grub="grub"
 echo '2.4 создание разделов'
 (
   echo o;
@@ -79,52 +65,6 @@ mkdir /mnt/{boot,home}
 mount /dev/sda1 /mnt/boot
 swapon /dev/sda3
 mount /dev/sda4 /mnt/home
-
-elif [[ $vm_setting  == 1 ]]; then
-grub="grub efibootmgr dosfstools os-prober"
-
-echo '2.4 создание разделов'
-(
-  echo g;
-
-  echo n;
-  echo 1;
-  echo;
-  echo +500M;
-  echo y;
-  echo t;
-  echo 1;
-
-  echo n;
-  echo 2;
-  echo;
-  echo +20G;
-  echo y;
-  
-  echo n;
-  echo 3;
-  echo;
-  echo;
-  
-  echo w;
-) | fdisk /dev/sda
-
-echo 'Ваша разметка диска'
-fdisk -l
-
-echo '2.4.2 Форматирование дисков'
-mkfs.fat -F32 /dev/sda1 
-mkfs.ext4  /dev/sda2
-mkfs.ext4  /dev/sda3
-
-echo '2.4.3 Монтирование дисков'
-mount /dev/sda2 /mnt
-mkdir /mnt/home
-mkdir -p /mnt/boot/efi
-mount /dev/sda1 /mnt/boot/efi
-mount /dev/sda3 /mnt/home
-
-fi
 
 echo '3.1 Выбор зеркал для загрузки. Ставим зеркало от Яндекс'
 echo "Server = http://mirror.yandex.ru/archlinux/\$repo/os/\$arch" > /etc/pacman.d/mirrorlist
