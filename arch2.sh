@@ -71,7 +71,7 @@ elif [[ $vm_setting == 2 ]]; then
 elif [[ $vm_setting == 3 ]]; then  
   pacman -S  openbox xfce4-terminal
 elif [[ $vm_setting == 4 ]]; then  
-  pacman -S bspwm sxhkd
+  pacman -S bspwm sxhkd dmenu
 fi
 
 echo 'Cтавим DM'
