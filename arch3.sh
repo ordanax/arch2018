@@ -12,18 +12,14 @@ echo 'Создаем нужные директории'
 sudo pacman -S xdg-user-dirs --noconfirm
 xdg-user-dirs-update
 
-echo 'Установка базовых программ и пакетов'
-sudo pacman -S firefox firefox-i18n-ru ufw f2fs-tools dosfstools ntfs-3g alsa-lib alsa-utils file-roller p7zip unrar gvfs aspell-ru pulseaudio pavucontrol --noconfirm
+echo 'Установка программ'
+sudo pacman -S firefox ufw qt4 f2fs-tools dosfstools ntfs-3g alsa-lib alsa-utils file-roller p7zip unrar gvfs aspell-ru pulseaudio pavucontrol --noconfirm
 
 echo 'Установить рекомендумые программы?'
 read -p "1 - Да, 0 - Нет: " prog_set
 if [[ $prog_set == 1 ]]; then
-  #Можно заменить на pacman -Qqm > ~/.pacmanlist.txt
-  sudo pacman -S recoll obs-studio veracrypt vlc freemind filezilla gimp libreoffice libreoffice-fresh-ru kdenlive screenfetch vlc qbittorrent galculator gnome-disk-utility telegram-desktop opera --noconfirm
-  wget https://raw.githubusercontent.com/ordanax/arch/master/attach/.aurlist.txt
-  yay -S --noconfirm - < .aurlist.txt
-  sudo rm -rf ~/downloads/.aurlist.txt
-  sudo rm -rf ~/.config/xfce4/*
+  sudo pacman -S obs-studio doublecmd-gtk2 veracrypt vlc freemind filezilla gimp libreoffice libreoffice-fresh-ru kdenlive audacity screenfetch vlc qbittorrent galculator --noconfirm
+  yay -S cherrytree gxneur-devel-git timeshift flameshot-git xflux sublime-text-dev hunspell-ru pamac-aur --noconfirm 
 elif [[ $prog_set == 0 ]]; then
   echo 'Установка программ пропущена.'
 fi
@@ -32,22 +28,17 @@ echo 'Скачать и установить конфиг и темы для XFC
 read -p "1 - Да, 0 - Нет: " xfce_set
 if [[ $xfce_set == 1 ]]; then
   echo 'Качаем и устанавливаем настройки Xfce'
-  # Чтобы сделать копию ваших настоек перейдите в домашнюю директорию ~/username открйте в этой категории терминал и выполните команду ниже.
-  # tar -czf config.tar.gz .config
-  # Выгрузите архив в интернет и скорректируйте ссылку на свою.
-  wget https://github.com/ordanax/arch/blob/master/attach/config.tar.gz
+  # Чтобы сделать копию ваших настоек XFCE перейдите в домашнюю директорию ~/username открйте в этой категории терминал и выполните команду ниже.
+  # tar -czf xfce4.tar.gz .config/xfce4
+  # Выгрузите архив в интернет и скорректируйте ссылку на XFCE файл заменив ссылку на свою.
+  # wget git.io/xfce4.tar.gz
+  wget https://github.com/ordanax/arch2018/raw/master/attach/xfce4.tar.gz
   sudo rm -rf ~/.config/xfce4/panel/
   sudo rm -rf ~/.config/xfce4/*
-  sudo tar -xzf config.tar.gz -C ~/
-  echo 'Удаление тем по умолчанию'
-  sudo rm -rf /usr/share/themes/*
+  sudo tar -xzf xfce4.tar.gz -C ~/
   echo 'Установка тем'
-  yay -S papirus-maia-icon-theme-git breeze-default-cursor-theme --noconfirm
+  yay -S osx-arc-shadow papirus-maia-icon-theme-git breeze-default-cursor-theme --noconfirm
   sudo pacman -S capitaine-cursors
-  echo 'Установка темы OSX-Arc-Shadow'
-  wget https://github.com/thiagolucio/OSX-Arc-Shadow/archive/master.zip
-  unzip OSX-Arc-Shadow-master.zip
-  sudo mv -f ~/downloads/OSX-Arc-Shadow-master /usr/share/themes
   
   echo 'Ставим лого ArchLinux в меню'
   wget git.io/arch_logo.png
@@ -60,43 +51,30 @@ if [[ $xfce_set == 1 ]]; then
 elif [[ $xfce_set == 0 ]]; then
   echo 'Установка конфигов XFCE пропущена.'
 fi 
-
-echo "Ставим i3 с моими настройками?"
-read -p "1 - Да, 2 - Нет: " vm_setting
-if [[ $vm_setting == 1 ]]; then
-    pacman -S i3-wm i3-gaps i3status sbxkb dmenu pcmanfm ttf-font-awesome feh lxappearance thunar gvfs udiskie xorg-xbacklight ristretto tumbler compton --noconfirm
-    yay -S polybar
-    wget https://github.com/ordanax/dots/raw/master/i3wm_v_2/i3wm_config.tar.gz
-    sudo rm -rf ~/.config/i3/*
-    sudo rm -rf ~/.config/polybar/*
-    sudo tar -xzf i3wm_config.tar.gz -C ~/
-elif [[ $vm_setting == 2 ]]; then
-  echo 'Пропускаем.'
-fi
+  
+echo 'Скачать и установить конфиг и темы для Openbox?'
+read -p "1 - Да, 0 - Нет: " openbox_set
+if [[ $openbox_set == 1 ]]; then
+  echo 'Качаем и устанавливаем настройки Openbox'
+  #wget git.io/openbox.tar.gz
+  #sudo tar -xzf openbox.tar.gz -C ~/
+  #wget git.io/tint2.tar.gz
+  #sudo tar -xzf tint2.tar.gz -C ~/
+  wget https://github.com/ordanax/arch2018/raw/master/attach/config.tar.gz
+  sudo tar -xzf config.tar.gz -C ~/
+  yay -S obconf obmenu-generator obkey-git lxappearance-obconf tint2 nitrogen thunar mousepad wmctrl compton papirus-icon-theme
+  sudo pacman -S capitaine-cursors
+elif [[ $openbox_set == 0 ]]; then
+  echo 'Установка конфигов Openbox пропущена.'
+fi  
 
 echo 'Убираем меню граб для выбора системы?'
 read -p "1 - Да, 0 - Нет: " grub_set
 if [[ $grub_set == 1 ]]; then
   wget git.io/grub.tar.gz
-  sudo tar -xzf grub.tar.gz -C /
+  sudo tar -xzf grub.tar.gz -C ~/
   sudo grub-mkconfig -o /boot/grub/grub.cfg
 elif [[ $grub_set == 0 ]]; then
-  echo 'Пропускаем.'
-fi
-
-echo 'Убираем DE?'
-read -p "1 - Да, 0 - Нет: " node_set
-if [[ $node_set == 1 ]]; then
-sudo pacman -S xorg-xinit
-cp /etc/X11/xinit/xserverrc ~/.xserverrc
-wget https://raw.githubusercontent.com/ordanax/arch/master/attach/.xinitrc
-sudo rm -rf ~/.bashrc
-wget https://raw.githubusercontent.com/ordanax/arch/master/attach/.bashrc
-su -c 'read -p "Введите ваш логин: " nodelogin && echo "[Service]" > /etc/systemd/system/getty@tty1.service.d/override.conf && echo "ExecStart=" >> /etc/systemd/system/getty@tty1.service.d/override.conf && echo "ExecStart=-/usr/bin/agetty --autologin $nodelogin --noclear %I $TERM" >> /etc/systemd/system/getty@tty1.service.d/override.conf'
-sudo systemctl disable lxdm
-sudo pacman -R lxdm
-
-elif [[ $node_set == 0 ]]; then
   echo 'Пропускаем.'
 fi
 
