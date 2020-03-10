@@ -62,7 +62,7 @@ elif [[ $xfce_set == 0 ]]; then
 fi 
 
 echo "Ставим i3 с моими настройками?"
-read -p "1 - Да, 2 - Нет" vm_setting
+read -p "1 - Да, 2 - Нет: " vm_setting
 if [[ $vm_setting == 1 ]]; then
     pacman -S i3-wm i3-gaps i3status sbxkb dmenu pcmanfm ttf-font-awesome feh lxappearance thunar gvfs udiskie xorg-xbacklight ristretto tumbler compton --noconfirm
     yay -S polybar
