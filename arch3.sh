@@ -46,7 +46,6 @@ if [[ $xfce_set == 1 ]]; then
   sudo pacman -S capitaine-cursors
   echo 'Установка темы OSX-Arc-Shadow'
   wget https://github.com/thiagolucio/OSX-Arc-Shadow/archive/master.zip
-  cd ~/downloads
   unzip OSX-Arc-Shadow-master.zip
   sudo mv -f ~/downloads/OSX-Arc-Shadow-master /usr/share/themes
   
@@ -85,12 +84,11 @@ elif [[ $grub_set == 0 ]]; then
   echo 'Пропускаем.'
 fi
 
-#echo 'Убираем DE?'
+echo 'Убираем DE?'
 read -p "1 - Да, 0 - Нет: " node_set
 if [[ $node_set == 1 ]]; then
 sudo pacman -S xorg-xinit
 cp /etc/X11/xinit/xserverrc ~/.xserverrc
-cd ~/
 wget https://raw.githubusercontent.com/ordanax/arch/master/attach/.xinitrc
 sudo rm -rf ~/.bashrc
 wget https://raw.githubusercontent.com/ordanax/arch/master/attach/.bashrc
