@@ -20,7 +20,7 @@ read -p "1 - Да, 0 - Нет: " prog_set
 if [[ $prog_set == 1 ]]; then
   #Можно заменить на pacman -Qqm > ~/.pacmanlist.txt
   sudo pacman -S recoll obs-studio veracrypt vlc freemind filezilla gimp libreoffice libreoffice-fresh-ru kdenlive screenfetch vlc qbittorrent galculator gnome-disk-utility telegram-desktop opera --noconfirm
-  wget https://git.io/Jvr57 
+  wget https://raw.githubusercontent.com/ordanax/arch/master/attach/.aurlist.txt
   yay -S --noconfirm - < .aurlist.txt
   sudo rm -rf ~/downloads/.aurlist.txt
   sudo rm -rf ~/.config/xfce4/*
