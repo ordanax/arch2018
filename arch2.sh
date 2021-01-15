@@ -4,7 +4,7 @@ read -p "Введите имя пользователя: " username
 
 echo 'Прописываем имя компьютера'
 echo $hostname > /etc/hostname
-ln -svf /usr/share/zoneinfo/Asia/Yekaterinburg /etc/localtime
+ln -svf /usr/share/zoneinfo/Europe/Kiev /etc/localtime
 
 echo '3.4 Добавляем русскую локаль системы'
 echo "en_US.UTF-8 UTF-8" > /etc/locale.gen
@@ -51,26 +51,7 @@ echo '[multilib]' >> /etc/pacman.conf
 echo 'Include = /etc/pacman.d/mirrorlist' >> /etc/pacman.conf
 pacman -Syy
 
-echo "Куда устанавливем Arch Linux на виртуальную машину?"
-read -p "1 - Да, 0 - Нет: " vm_setting
-if [[ $vm_setting == 0 ]]; then
-  gui_install="xorg-server xorg-drivers xorg-xinit"
-elif [[ $vm_setting == 1 ]]; then
-  gui_install="xorg-server xorg-drivers xorg-xinit virtualbox-guest-utils"
-fi
 
-echo 'Ставим иксы и драйвера'
-pacman -S $gui_install
-
-echo "Ставим XFCE"
-pacman -S xfce4 xfce4-goodies --noconfirm
-
-echo 'Cтавим DM'
-pacman -S lxdm --noconfirm
-systemctl enable lxdm
-
-echo 'Ставим шрифты'
-pacman -S ttf-liberation ttf-dejavu --noconfirm 
 
 echo 'Ставим сеть'
 pacman -S networkmanager network-manager-applet ppp --noconfirm
@@ -78,7 +59,4 @@ pacman -S networkmanager network-manager-applet ppp --noconfirm
 echo 'Подключаем автозагрузку менеджера входа и интернет'
 systemctl enable NetworkManager
 
-echo 'Установка завершена! Перезагрузите систему.'
-echo 'Если хотите подключить AUR, установить мои конфиги XFCE, тогда после перезагрзки и входа в систему, установите wget (sudo pacman -S wget) и выполните команду:'
-echo 'wget git.io/arch3.sh && sh arch3.sh'
 exit
