@@ -52,7 +52,7 @@ echo 'Include = /etc/pacman.d/mirrorlist' >> /etc/pacman.conf
 pacman -Syy
 
 
-
+pacman-key --refresh-keys
 echo 'Ставим сеть'
 pacman -S networkmanager network-manager-applet ppp --noconfirm
 
