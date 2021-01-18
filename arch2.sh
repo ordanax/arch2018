@@ -22,7 +22,7 @@ echo 'FONT=cyr-sun16' >> /etc/vconsole.conf
 
 echo 'Создадим загрузочный RAM диск'
 mkinitcpio -p linux
-
+reflector --verbose -l 200 -p https --sort rate --save /etc/pacman.d/mirrorlist
 echo '3.5 Устанавливаем загрузчик'
 pacman -Syy
 pacman -S grub --noconfirm 
