@@ -51,9 +51,9 @@ echo 'Раскомментируем репозиторий multilib Для ра
 echo '[multilib]' >> /etc/pacman.conf
 echo 'Include = /etc/pacman.d/mirrorlist' >> /etc/pacman.conf
 pacman -Syy
-
-
 pacman-key --refresh-keys
+pacman -S archlinux-keyring --noconfirm
+
 echo 'Ставим сеть'
 pacman -S networkmanager network-manager-applet ppp --noconfirm
 
