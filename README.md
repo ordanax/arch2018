@@ -1,98 +1,55 @@
 ##############################################
-# ArchLinux Fast Install v1.6
+# ArchLinux Fast Install v1.6 (FORK to install pure Arch Linux)
 ##############################################
 
-# Описание
-Этот скрипт не задумывался, как обычный установочный с большим выбором DE, разметкой диска и т.д. И он не предназначет для новичков. Он предназначет для тех, кто ставил ArchLinux руками и понимает, что и для чего нужна каждая команда. 
+# How to start installation
 
-Его цель - это моментальное разворачиванеи системы со всеми конфигами. Смысл в том что, все изменения вы делаете предварительно в самом скрипте и получаете возможность быстрой установки ArchLinux с вашими личными настройками (при условии, что вы его изменили под себя, в противном случае с моими настройками).
+After entering the Arch Linux live environment
 
-Cкрипт основан на моем чек листе ручной установке ArchLinux https://vk.cc/7JTg6U
-Разметка MBR c BIOS. C UEFI скрипт по ссылке https://github.com/ordanax/arch
-
-Cостоит из 3 частей. 
-
-Видео с демонстрацией работы скрипта https://www.youtube.com/watch?v=nvVF_qKDUeM
-
-# Установка 
-1) Скачать и записать на флешку ISO образ Arch Linux https://www.archlinux.org/download/
-2) Скачать и запустить скрипт командой:
+1) Install git:
 
    ```bash 
-   wget git.io/arch1.sh && sh arch1.sh
+   pacman -Sy git
    ```
-   или
+2) Clone the repository:
    
     ```bash
-   curl -OL git.io/arch1.sh && sh arch1.sh
+   git clone https://github.com/Noct2000/arch2018
+   ```
+	
+3) Run the script:
+
+   ```bash 
+   cd arch2018
    ```
    
-   Запустится установка минимальной системы.
-   2-я часть ставится автоматически и это базовая установка ArchLinux без программ. 
-3) 3-я часть не обязательная. Она устанавливает программы, AUR (yay), мои конфиги XFCE.
-   Предварительно установите wget командой:
    ```bash 
-   sudo pacman -S wget
+   sh arch1.sh
    ```
-   Установка 3-й части производится из терминала командой:
+   
+    DON'T RUN SCRIPT LIKE ``` sh ./arch2018/arch1.sh ```
+   
+4) Restart your computer and remove the CD (or flash drive) with the Arch Linux image
+
+# During the script execution, you will need to enter:
+
+- hostname;
+- username;
+- root's password;
+- user's password.
+
+# If you need to install XFCE environment.
+
+### Follow the steps below:
+
+1) Install git on your new system;
+
+2) Clone the repository;
+
+3) Run xfce.sh:
    
    ```bash 
-   wget git.io/arch3.sh && sh arch3.sh
+   sudo sh ./arch2018/xfce.sh
    ```
+4) In group xorg select all (press Enter);
 
-# Настройка скрипта под себя
-Вы можете форкнуть этот срипт. Изменить разметку дисков под свои нужды, сделать копию собственного конфга XFCE, залить его на Github и производить быстрое разворачивание вашей системы.
-По завершению работы скрипта вы получаете вашу готовую и настроенную систему со всеми конфигами. Вам ее нужно лишь немного привести в порядок и все.
-Как и что менять написано в комментариях в самом скрипте.
-
-# ВНИМАНИЕ!
-Автор не несет ответственности за любое нанесение вреда при использовании скрипта. Используйте его на свой страх и риск или изменяйте под свои личные нужды.
-
-Скрипт затирает диск dev/sda в системе. Поэтому если у вас есть ценные данные на дисках сохраните их. Если вам нужна установка рядом с Windows, тогда вам нужно предварительно изменить скрипт и разметить диски. В противном случае данные и Windows будут затерты.
-
-Если вам не подходит автоматическая разметка дисков, тогда вам, предварительно нужно сделать разметку дисков и настроить скрипт под свои нужды (программы, XFCE config и т.д.)
-Смотрите пометки в самом скрипте.
-
-# В разработке принимали участие:
-Алексей Бойко https://vk.com/ordanax
-
-Степан Скрябин https://vk.com/zurg3
-
-Михаил Сарвилин https://vk.com/michael170707
-
-Данил Антошкин https://vk.com/danil.antoshkin
-
-Юрий Порунцов https://vk.com/poruncov
-
-# Контакты
-Наша группа по Arch Linux https://vk.com/arch4u
-
-
-# История изменений
-
-### 22.09.2019 ArchLinux Fast Install v1.6
-- Удален SDDM
-
-### 8.04.2019 ArchLinux Fast Install v1.5
-- Добавлен выбор DE OpenBox
-
-### 28.03.2019 ArchLinux Fast Install v1.4
-- Добавлена устатановка conky
-
-### 27.03.2019 ArchLinux Fast Install v1.3
-- Добавлен выбор DE - Xfce и KDE
-- Добавлен выбор DM - SDDM и LXDM
-- Добавлен выбор загрузки системы без паузы в Grub
-
-### 23.03.2019 ArchLinux Fast Install v1.2
-- Добавлен выбор установки рекомендуемых программ
-
-### 21.03.2019 ArchLinux Fast Install v1.1
-- Исправлен баг с установкой тем
-- Заменена тема курсора
-- Скорректирован конфигурационный файл XFCE
-
-### 18.03.2019 ArchLinux Fast Install v1.0
-- Теперь можно вводить собственное имя хоста и юзера
-- Исправлен 3-й файл с установкой тем
-- aurman заменен на yay
