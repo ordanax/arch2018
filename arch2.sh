@@ -74,7 +74,7 @@ echo 'Установка базовых программ и пакетов'
 sudo pacman -S reflector firefox firefox-i18n-ru ufw f2fs-tools dosfstools ntfs-3g alsa-lib alsa-utils file-roller p7zip unrar gvfs aspell-ru pulseaudio pavucontrol --noconfirm
 
 echo "Ставим i3"
-pacman -S i3-gaps polybar dmenu pcmanfm ttf-font-awesome feh gvfs udiskie ristretto tumbler picom jq --noconfirm
+pacman -S i3-gaps polybar dmenu pcmanfm xterm ttf-font-awesome feh gvfs udiskie ristretto tumbler picom jq --noconfirm
     
 echo 'Ставим сеть'
 pacman -S networkmanager network-manager-applet ppp --noconfirm
