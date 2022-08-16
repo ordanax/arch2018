@@ -62,8 +62,7 @@ fi
 echo 'Ставим иксы и драйвера'
 pacman -S $gui_install
 
-echo "Ставим XFCE"
-pacman -S xfce4 xfce4-goodies --noconfirm
+
 
 echo 'Cтавим DM'
 pacman -S lightdm --noconfirm
@@ -76,7 +75,7 @@ echo 'Установка базовых программ и пакетов'
 sudo pacman -S reflector firefox firefox-i18n-ru ufw f2fs-tools dosfstools ntfs-3g alsa-lib alsa-utils file-roller p7zip unrar gvfs aspell-ru pulseaudio pavucontrol --noconfirm
 
 echo "Ставим i3"
-pacman -S i3-wm dmenu pcmanfm ttf-font-awesome feh gvfs udiskie xorg-xbacklight ristretto tumbler compton jq --noconfirm
+pacman -S i3-gaps dmenu pcmanfm ttf-font-awesome feh gvfs udiskie xorg-xbacklight ristretto tumbler compton jq --noconfirm
     
 echo 'Ставим сеть'
 pacman -S networkmanager network-manager-applet ppp --noconfirm
