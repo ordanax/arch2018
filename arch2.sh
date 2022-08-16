@@ -4,7 +4,7 @@ read -p "Введите имя пользователя: " username
 
 echo 'Прописываем имя компьютера'
 echo $hostname > /etc/hostname
-ln -svf /usr/share/zoneinfo/Asia/Yekaterinburg /etc/localtime
+ln -svf /usr/share/zoneinfo/Europe/Moscow  /etc/localtime
 
 echo '3.4 Добавляем русскую локаль системы'
 echo "en_US.UTF-8 UTF-8" > /etc/locale.gen
@@ -46,10 +46,10 @@ passwd $username
 echo 'Устанавливаем SUDO'
 echo '%wheel ALL=(ALL) ALL' >> /etc/sudoers
 
-echo 'Раскомментируем репозиторий multilib Для работы 32-битных приложений в 64-битной системе.'
-echo '[multilib]' >> /etc/pacman.conf
-echo 'Include = /etc/pacman.d/mirrorlist' >> /etc/pacman.conf
-pacman -Syy
+#echo 'Раскомментируем репозиторий multilib Для работы 32-битных приложений в 64-битной системе.'
+#echo '[multilib]' >> /etc/pacman.conf
+#echo 'Include = /etc/pacman.d/mirrorlist' >> /etc/pacman.conf
+#pacman -Syy
 
 echo "Куда устанавливем Arch Linux на виртуальную машину?"
 read -p "1 - Да, 0 - Нет: " vm_setting
@@ -66,12 +66,18 @@ echo "Ставим XFCE"
 pacman -S xfce4 xfce4-goodies --noconfirm
 
 echo 'Cтавим DM'
-pacman -S lxdm --noconfirm
-systemctl enable lxdm
+pacman -S lightdm --noconfirm
+systemctl enable lightdm
 
 echo 'Ставим шрифты'
 pacman -S ttf-liberation ttf-dejavu --noconfirm 
 
+echo 'Установка базовых программ и пакетов'
+sudo pacman -S reflector firefox firefox-i18n-ru ufw f2fs-tools dosfstools ntfs-3g alsa-lib alsa-utils file-roller p7zip unrar gvfs aspell-ru pulseaudio pavucontrol --noconfirm
+
+echo "Ставим i3"
+pacman -S i3-wm dmenu pcmanfm ttf-font-awesome feh gvfs udiskie xorg-xbacklight ristretto tumbler compton jq --noconfirm
+    
 echo 'Ставим сеть'
 pacman -S networkmanager network-manager-applet ppp --noconfirm
 
